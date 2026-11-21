@@ -1,0 +1,107 @@
+[
+  {
+    "subject": "Geography",
+    "q": "Which of the following rivers does NOT originate in India?",
+    "options": ["Beas", "Chenab", "Ravi", "Sutlej"],
+    "ans": 3,
+    "exp": "The Sutlej originates near Lake Rakshastal in Tibet (China) and enters India through the Shipki La pass."
+  },
+  {
+    "subject": "Geography",
+    "q": "Siachen Glacier is situated to the:",
+    "options": ["East of Aksai Chin", "East of Leh", "North of Gilgit", "North of Nubra Valley"],
+    "ans": 3,
+    "exp": "Siachen Glacier lies in the eastern Karakoram range, immediately north of the Nubra Valley."
+  },
+  {
+    "subject": "Geography",
+    "q": "The 'Roaring Forties' are strong westerly winds found primarily in:",
+    "options": ["Northern Hemisphere between 40° and 50°", "Southern Hemisphere between 40° and 50°", "Equatorial Doldrums", "Polar Easterlies belt"],
+    "ans": 1,
+    "exp": "Due to less landmass in the Southern Hemisphere between 40°S and 50°S, westerly winds blow with great strength, known as the Roaring Forties."
+  },
+  {
+    "subject": "Geography",
+    "q": "Which of the following rivers flows through a rift valley in India?",
+    "options": ["Godavari", "Narmada", "Krishna", "Kaveri"],
+    "ans": 1,
+    "exp": "The Narmada (and Tapi) flows westward through a structural rift valley between the Vindhya and Satpura ranges."
+  },
+  {
+    "subject": "Geography",
+    "q": "The Tropic of Cancer passes through how many Indian states?",
+    "options": ["6", "7", "8", "9"],
+    "ans": 2,
+    "exp": "It passes through 8 states: Gujarat, Rajasthan, Madhya Pradesh, Chhattisgarh, Jharkhand, West Bengal, Tripura, and Mizoram."
+  },
+  {
+    "subject": "Geography",
+    "q": "Which soil in India is known as 'Regur Soil' and is ideal for cotton cultivation?",
+    "options": ["Alluvial Soil", "Black Soil", "Laterite Soil", "Red Soil"],
+    "ans": 1,
+    "exp": "Black cotton soil (Regur) is formed from Deccan lava (basalt), has high moisture-retention capacity, and is self-ploughing."
+  },
+  {
+    "subject": "Geography",
+    "q": "The 'Ten Degree Channel' separates:",
+    "options": ["Andaman Islands and Nicobar Islands", "Lakshadweep and Maldives", "Minicoy and Amindivi Islands", "India and Sri Lanka"],
+    "ans": 0,
+    "exp": "The Ten Degree Channel (10°N latitude) separates Little Andaman in the north from Car Nicobar in the south."
+  },
+  {
+    "subject": "Geography",
+    "q": "Which of the following is a cold ocean current?",
+    "options": ["Gulf Stream", "Kuroshio Current", "Humboldt (Peru) Current", "Agulhas Current"],
+    "ans": 2,
+    "exp": "The Humboldt (Peru) Current is a cold, low-salinity current flowing north along the western coast of South America."
+  },
+  {
+    "subject": "Geography",
+    "q": "The 'Karewas' of Kashmir are famous for the cultivation of:",
+    "options": ["Tea", "Zafran (Saffron)", "Coffee", "Rubber"],
+    "ans": 1,
+    "exp": "Karewas are thick lacustrine deposits of glacial clay in the Kashmir Valley, famous for growing Zafran (a local variety of saffron)."
+  },
+  {
+    "subject": "Geography",
+    "q": "Which of the following mountain passes connects Srinagar with Leh?",
+    "options": ["Nathu La", "Zoji La", "Shipki La", "Bomdi La"],
+    "ans": 1,
+    "exp": "Zoji La in the Greater Himalayas provides the vital link between Srinagar (Kashmir Valley) and Leh (Ladakh)."
+  },
+  {
+    "subject": "Geography",
+    "q": "In which layer of the Earth's atmosphere do almost all weather phenomena occur?",
+    "options": ["Stratosphere", "Troposphere", "Mesosphere", "Thermosphere"],
+    "ans": 1,
+    "exp": "The Troposphere is the lowest atmospheric layer containing most of the atmosphere's water vapour and clouds, where weather occurs."
+  },
+  {
+    "subject": "Geography",
+    "q": "Which of the following countries does NOT border the Mediterranean Sea?",
+    "options": ["Jordan", "Lebanon", "Syria", "Israel"],
+    "ans": 0,
+    "exp": "Jordan is bordered by the Red Sea (Gulf of Aqaba) in the south and does not touch the Mediterranean Sea."
+  },
+  {
+    "subject": "Geography",
+    "q": "The Eastern Ghats and the Western Ghats meet at:",
+    "options": ["Cardamom Hills", "Annamalai Hills", "Nilgiri Hills", "Palani Hills"],
+    "ans": 2,
+    "exp": "The Nilgiri Hills (Blue Mountains) form the junction where the Eastern Ghats and Western Ghats converge."
+  },
+  {
+    "subject": "Geography",
+    "q": "Which of the following is the largest freshwater lake in Northeast India, famous for its floating 'Phumdis'?",
+    "options": ["Chilika Lake", "Loktak Lake", "Wular Lake", "Kolleru Lake"],
+    "ans": 1,
+    "exp": "Loktak Lake in Manipur is known for its floating biomass islands called Phumdis and houses Keibul Lamjao National Park."
+  },
+  {
+    "subject": "Geography",
+    "q": "The 'Strait of Hormuz' connects the Persian Gulf with the:",
+    "options": ["Red Sea", "Gulf of Aden", "Gulf of Oman", "Mediterranean Sea"],
+    "ans": 2,
+    "exp": "The Strait of Hormuz is a strategic maritime chokepoint linking the Persian Gulf to the Gulf of Oman and the Arabian Sea."
+  }
+]
