@@ -274,14 +274,27 @@
   let timerInterval = null;
   let finalReport = {};
 
-  // Load questions.json on startup
-  fetch("./questions.json")
-    .then(res => {
-      if (!res.ok) throw new Error("Failed to load questions.json");
-      return res.json();
-    })
-    .then(data => {
-      ALL_QUESTIONS = data;
+  const QUESTION_FILES = [
+    "./polity.json",
+    "./economy.json",
+    "./geography.json",
+    "./modern_history.json",
+    "./environment.json",
+    "./ancient_culture.json",
+    "./science_tech.json"
+  ];
+
+  // Load all 7 subject JSON files on startup
+  Promise.all(
+    QUESTION_FILES.map(file =>
+      fetch(file).then(res => {
+        if (!res.ok) throw new Error(`File not found: ${file}`);
+        return res.json();
+      })
+    )
+  )
+    .then(results => {
+      ALL_QUESTIONS = results.flat();
       const subjects = [...new Set(ALL_QUESTIONS.map(q => q.subject))];
       document.getElementById("bankInfo").textContent = `Question Bank: ${ALL_QUESTIONS.length} Static Qs across ${subjects.length} UPSC Subjects`;
 
@@ -296,8 +309,8 @@
       startBtn.textContent = "Start Mock Test →";
       onModeChange();
     })
-    .catch(() => {
-      document.getElementById("bankInfo").textContent = "Error: questions.json not found in repo.";
+    .catch(err => {
+      document.getElementById("bankInfo").textContent = `Error: ${err.message}`;
     });
 
   function shuffle(arr) {
