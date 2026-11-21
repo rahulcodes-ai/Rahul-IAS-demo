@@ -1,0 +1,100 @@
+[
+  {
+    "subject": "Polity",
+    "q": "Which Article of the Constitution of India safeguards one's right to marry the person of one's choice?",
+    "options": ["Article 19", "Article 21", "Article 25", "Article 29"],
+    "ans": 1,
+    "exp": "In the Hadiya case (2018), the Supreme Court held that the right to marry a person of one's choice is an integral part of Article 21."
+  },
+  {
+    "subject": "Polity",
+    "q": "A Money Bill passed by the Lok Sabha can be delayed by the Rajya Sabha for a maximum period of:",
+    "options": ["14 days", "30 days", "60 days", "6 months"],
+    "ans": 0,
+    "exp": "Under Article 109, the Rajya Sabha must return a Money Bill within 14 days, failing which it is deemed passed by both Houses."
+  },
+  {
+    "subject": "Economy",
+    "q": "If the RBI decides to adopt an expansionist monetary policy, which of the following would it NOT do?",
+    "options": ["Cut and optimize the Statutory Liquidity Ratio", "Increase the Marginal Standing Facility Rate", "Cut the Bank Rate and Repo Rate", "Buy government securities in Open Market Operations"],
+    "ans": 1,
+    "exp": "Increasing the MSF rate makes borrowing costlier and reduces liquidity (contractionary), whereas expansionist policy increases money supply."
+  },
+  {
+    "subject": "Economy",
+    "q": "Which of the following is included in the Capital Budget of the Government of India?",
+    "options": ["Expenditure on acquisition of assets like roads and buildings", "Loans received from foreign governments", "Loans and advances granted to the States", "All of the above"],
+    "ans": 3,
+    "exp": "Capital Budget includes both Capital Receipts (foreign loans, disinvestment) and Capital Expenditure (asset creation, loans to states)."
+  },
+  {
+    "subject": "Geography",
+    "q": "Which of the following rivers does NOT originate in India?",
+    "options": ["Beas", "Chenab", "Ravi", "Sutlej"],
+    "ans": 3,
+    "exp": "The Sutlej originates near Lake Rakshastal in Tibet (China) and enters India through the Shipki La pass."
+  },
+  {
+    "subject": "Geography",
+    "q": "Siachen Glacier is situated to the:",
+    "options": ["East of Aksai Chin", "East of Leh", "North of Gilgit", "North of Nubra Valley"],
+    "ans": 3,
+    "exp": "Siachen Glacier lies in the eastern Karakoram range, immediately north of the Nubra Valley."
+  },
+  {
+    "subject": "Modern History",
+    "q": "In the context of Colonial India, Shah Nawaz Khan, Prem Kumar Sehgal and Gurbaksh Singh Dhillon are remembered as:",
+    "options": ["Leaders of Swadeshi Movement", "Members of the Interim Government in 1946", "Officers of the Indian National Army", "Members of the Drafting Committee"],
+    "ans": 2,
+    "exp": "They were the three INA officers famously tried together in the Red Fort Trials (1945–46)."
+  },
+  {
+    "subject": "Modern History",
+    "q": "Who among the following was associated as Secretary with Hindu Female School which later came to be known as Bethune Female School?",
+    "options": ["Annie Besant", "Debendranath Tagore", "Ishwar Chandra Vidyasagar", "Sarojini Naidu"],
+    "ans": 2,
+    "exp": "Ishwar Chandra Vidyasagar served as the Secretary of the Bethune School, established in 1849 in Calcutta."
+  },
+  {
+    "subject": "Ancient & Culture",
+    "q": "With reference to the history of ancient India, Bhavabhuti, Hastimalla and Kshemeshvara were famous:",
+    "options": ["Jain monks", "Playwrights", "Temple architects", "Philosophers"],
+    "ans": 1,
+    "exp": "Bhavabhuti, Hastimalla, and Kshemeshvara were renowned Sanskrit/Prakrit playwrights."
+  },
+  {
+    "subject": "Ancient & Culture",
+    "q": "Which of the following Harappan sites is famous for its dockyard?",
+    "options": ["Kalibangan", "Lothal", "Dholavira", "Banawali"],
+    "ans": 1,
+    "exp": "Lothal in Gujarat was a major port town of the Indus Valley Civilization known for its brick-built tidal dockyard."
+  },
+  {
+    "subject": "Environment",
+    "q": "Which of the following Protected Areas are located in Cauvery basin?",
+    "options": ["Nagarhole, Sathyamangalam, Wayanad", "Papikonda, Nagarhole, Wayanad", "Nagarhole, Papikonda, Sathyamangalam", "Sathyamangalam, Papikonda, Wayanad"],
+    "ans": 0,
+    "exp": "Nagarhole, Sathyamangalam, and Wayanad lie in the Cauvery basin, whereas Papikonda lies in the Godavari basin."
+  },
+  {
+    "subject": "Environment",
+    "q": "Under the Wildlife (Protection) Act, 1972, which Schedule provides the highest degree of protection to endangered species?",
+    "options": ["Schedule I", "Schedule II", "Schedule III", "Schedule IV"],
+    "ans": 0,
+    "exp": "Schedule I grants absolute protection; offences under this schedule attract the highest penalties."
+  },
+  {
+    "subject": "Science & Tech",
+    "q": "With reference to communication technologies, what is the difference between LTE and VoLTE?",
+    "options": ["LTE is commonly marketed as 3G and VoLTE as 4G", "LTE is data-only technology and VoLTE is voice-only technology", "Both 1 and 2", "Neither 1 nor 2"],
+    "ans": 3,
+    "exp": "LTE is 4G broadband (data + packet-switched), while VoLTE allows voice calls over the 4G LTE network alongside data."
+  },
+  {
+    "subject": "Science & Tech",
+    "q": "Which of the following is used as a moderator in nuclear reactors?",
+    "options": ["Heavy water (D2O)", "Liquid sodium", "Cadmium rods", "Boron steel"],
+    "ans": 0,
+    "exp": "Heavy water (D2O) and graphite are used as moderators to slow down fast neutrons; Cadmium/Boron are used as control rods."
+  }
+]
