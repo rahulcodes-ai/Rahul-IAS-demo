@@ -1,0 +1,128 @@
+[
+  {
+    "subject": "Polity",
+    "q": "Which Article of the Constitution of India safeguards one's right to marry the person of one's choice?",
+    "options": ["Article 19", "Article 21", "Article 25", "Article 29"],
+    "ans": 1,
+    "exp": "In the Hadiya case (2018), the Supreme Court held that the right to marry a person of one's choice is an integral part of Article 21."
+  },
+  {
+    "subject": "Polity",
+    "q": "A Money Bill passed by the Lok Sabha can be delayed by the Rajya Sabha for a maximum period of:",
+    "options": ["14 days", "30 days", "60 days", "6 months"],
+    "ans": 0,
+    "exp": "Under Article 109, the Rajya Sabha must return a Money Bill within 14 days, failing which it is deemed passed by both Houses."
+  },
+  {
+    "subject": "Polity",
+    "q": "Under the Indian Constitution, concentration of wealth violates:",
+    "options": ["The Right to Equality", "The Directive Principles of State Policy", "The Right to Freedom", "The Concept of Welfare"],
+    "ans": 1,
+    "exp": "Article 39(c) under DPSP directs the State to ensure that the economic system does not result in the concentration of wealth to the common detriment."
+  },
+  {
+    "subject": "Polity",
+    "q": "Which Schedule of the Constitution of India contains special provisions for the administration and control of Scheduled Areas in states other than Assam, Meghalaya, Tripura and Mizoram?",
+    "options": ["Third Schedule", "Fifth Schedule", "Sixth Schedule", "Ninth Schedule"],
+    "ans": 1,
+    "exp": "The Fifth Schedule deals with Scheduled Areas and Scheduled Tribes in states other than the four northeastern states (which are covered under the Sixth Schedule)."
+  },
+  {
+    "subject": "Polity",
+    "q": "Who decides whether a Bill is a Money Bill or not?",
+    "options": ["President of India", "Finance Minister", "Speaker of the Lok Sabha", "Chairman of the Rajya Sabha"],
+    "ans": 2,
+    "exp": "Under Article 110(3), the decision of the Speaker of the Lok Sabha on whether a Bill is a Money Bill is final."
+  },
+  {
+    "subject": "Polity",
+    "q": "Which Constitutional Amendment Act lowered the voting age from 21 years to 18 years?",
+    "options": ["42nd Amendment Act", "44th Amendment Act", "61st Amendment Act", "73rd Amendment Act"],
+    "ans": 2,
+    "exp": "The 61st Constitutional Amendment Act, 1988 amended Article 326 to lower the voting age for Lok Sabha and State Assembly elections from 21 to 18."
+  },
+  {
+    "subject": "Polity",
+    "q": "The power to issue writs for the enforcement of Fundamental Rights is vested in:",
+    "options": ["Supreme Court only", "High Courts only", "Both Supreme Court and High Courts", "District Courts and High Courts"],
+    "ans": 2,
+    "exp": "Under Article 32 (Supreme Court) and Article 226 (High Courts), both can issue writs such as Habeas Corpus, Mandamus, Prohibition, Certiorari, and Quo Warranto."
+  },
+  {
+    "subject": "Polity",
+    "q": "Which of the following is NOT a Constitutional Body?",
+    "options": ["Election Commission of India", "Finance Commission", "NITI Aayog", "Union Public Service Commission"],
+    "ans": 2,
+    "exp": "NITI Aayog is an extra-constitutional (non-statutory) executive body created by a Cabinet resolution in 2015."
+  },
+  {
+    "subject": "Polity",
+    "q": "The Anti-Defection Law is contained in which Schedule of the Indian Constitution?",
+    "options": ["Eighth Schedule", "Ninth Schedule", "Tenth Schedule", "Eleventh Schedule"],
+    "ans": 2,
+    "exp": "The Tenth Schedule was inserted by the 52nd Constitutional Amendment Act, 1985 to curb political defections."
+  },
+  {
+    "subject": "Polity",
+    "q": "In the Parliament of India, the 'Zero Hour' refers to:",
+    "options": ["The first hour of every parliamentary sitting", "An informal device to raise matters without prior notice", "The time reserved exclusively for Money Bills", "The last hour before adjournment sine die"],
+    "ans": 1,
+    "exp": "Zero Hour is an Indian parliamentary innovation starting immediately after Question Hour, allowing MPs to raise urgent matters without prior notice."
+  },
+  {
+    "subject": "Polity",
+    "q": "Which of the following writs literally means 'by what authority or warrant'?",
+    "options": ["Mandamus", "Certiorari", "Quo Warranto", "Prohibition"],
+    "ans": 2,
+    "exp": "Quo Warranto is issued by a court to enquire into the legality of a claim of a person to a public office."
+  },
+  {
+    "subject": "Polity",
+    "q": "The 'Basic Structure' doctrine of the Indian Constitution was propounded by the Supreme Court in:",
+    "options": ["Golaknath Case (1967)", "Kesavananda Bharati Case (1973)", "Minerva Mills Case (1980)", "Maneka Gandhi Case (1978)"],
+    "ans": 1,
+    "exp": "In Kesavananda Bharati v. State of Kerala (1973), a 13-judge bench ruled that Parliament cannot alter the 'Basic Structure' of the Constitution under Article 368."
+  },
+  {
+    "subject": "Polity",
+    "q": "The Council of Ministers in the Union Government is collectively responsible to:",
+    "options": ["The President", "The Prime Minister", "The Lok Sabha", "Both Houses of Parliament"],
+    "ans": 2,
+    "exp": "Under Article 75(3), the Union Council of Ministers is collectively responsible to the House of the People (Lok Sabha)."
+  },
+  {
+    "subject": "Polity",
+    "q": "Which Article empowers the President of India to promulgate Ordinances during the recess of Parliament?",
+    "options": ["Article 112", "Article 123", "Article 143", "Article 213"],
+    "ans": 1,
+    "exp": "Article 123 grants ordinance-making power to the President (while Article 213 grants similar power to the Governor of a State)."
+  },
+  {
+    "subject": "Polity",
+    "q": "The 73rd Constitutional Amendment Act, 1992 is related to:",
+    "options": ["Municipalities", "Panchayati Raj Institutions", "Co-operative Societies", "Goods and Services Tax"],
+    "ans": 1,
+    "exp": "The 73rd Amendment added Part IX and the Eleventh Schedule to the Constitution, giving constitutional status to Panchayati Raj Institutions."
+  },
+  {
+    "subject": "Polity",
+    "q": "Who presides over a joint sitting of both Houses of Parliament?",
+    "options": ["President of India", "Vice-President of India", "Speaker of the Lok Sabha", "Prime Minister"],
+    "ans": 2,
+    "exp": "Under Article 118(4), the Speaker of the Lok Sabha presides over a joint sitting (summoned by the President under Article 108)."
+  },
+  {
+    "subject": "Polity",
+    "q": "The Finance Commission of India is constituted by the President every five years under:",
+    "options": ["Article 263", "Article 280", "Article 315", "Article 324"],
+    "ans": 1,
+    "exp": "Article 280 provides for a quasi-judicial Finance Commission to recommend the distribution of tax revenues between the Centre and the States."
+  },
+  {
+    "subject": "Polity",
+    "q": "Which Fundamental Right is available ONLY to citizens of India and NOT to foreigners?",
+    "options": ["Article 14 (Equality before law)", "Article 19 (Six freedoms)", "Article 21 (Protection of life and personal liberty)", "Article 25 (Freedom of religion)"],
+    "ans": 1,
+    "exp": "Articles 15, 16, 19, 29, and 30 are available exclusively to Indian citizens; Articles 14, 20, 21, 21A, 22, 23, 24, 25–28 apply to foreigners as well."
+  }
+]
