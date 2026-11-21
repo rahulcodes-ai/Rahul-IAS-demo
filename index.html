@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rahul IAS Academy — Prelims Test Series</title>
+  <meta name="theme-color" content="#0b0f19" />
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card: #131b2e;
+      --card-light: #1b2640;
+      --border: #253354;
+      --text: #e8eefc;
+      --muted: #8b9bb4;
+      --accent: #00e5ff;
+      --green: #10b981;
+      --red: #f43f5e;
+      --amber: #f59e0b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+    body { background: var(--bg); color: var(--text); min-height: 100vh; line-height: 1.5; }
+    .container { max-width: 820px; margin: 0 auto; padding: 16px; }
+    .hidden { display: none !important; }
+
+    /* Header */
+    .topbar {
+      display: flex; justify-content: space-between; align-items: center;
+      background: var(--card); border: 1px solid var(--border);
+      padding: 12px 16px; border-radius: 12px; margin-bottom: 16px;
+      position: sticky; top: 10px; z-index: 10;
+    }
+    .brand { font-size: 1.1rem; font-weight: 800; letter-spacing: 0.5px; }
+    .brand span { color: var(--accent); }
+    .timer {
+      background: #1e293b; border: 1px solid var(--accent); color: var(--accent);
+      padding: 6px 12px; border-radius: 8px; font-weight: 700; font-variant-numeric: tabular-nums;
+    }
+    .timer.danger { border-color: var(--red); color: var(--red); animation: pulse 1s infinite; }
+    @keyframes pulse { 50% { opacity: 0.5; } }
+
+    /* Cards & Buttons */
+    .card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 20px; margin-bottom: 16px;
+    }
+    .btn {
+      background: var(--accent); color: #05101c; border: none;
+      padding: 11px 18px; border-radius: 8px; font-weight: 700;
+      cursor: pointer; font-size: 0.95rem; transition: 0.2s;
+    }
+    .btn:hover { opacity: 0.9; transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent; color: var(--text); border: 1px solid var(--border);
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-amber { background: var(--amber); color: #1a1200; }
+    .btn-green { background: var(--green); color: #022c22; }
+    .btn-red { background: var(--red); color: #fff; }
+
+    /* Login Screen */
+    .login-box { max-width: 460px; margin: 36px auto; }
+    .badge {
+      display: inline-block; background: rgba(0, 229, 255, 0.12); color: var(--accent);
+      border: 1px solid rgba(0, 229, 255, 0.3); padding: 4px 10px;
+      border-radius: 20px; font-size: 0.78rem; font-weight: 700; margin-bottom: 10px;
+    }
+    .input-group { margin-bottom: 14px; }
+    .input-group label { display: block; font-size: 0.85rem; color: var(--muted); margin-bottom: 6px; }
+    .input-group input {
+      width: 100%; padding: 11px 12px; border-radius: 8px;
+      border: 1px solid var(--border); background: var(--bg); color: var(--text);
+      font-size: 0.95rem; outline: none;
+    }
+    .input-group input:focus { border-color: var(--accent); }
+    .meta-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+      margin: 16px 0; text-align: center;
+    }
+    .meta-item { background: var(--bg); padding: 10px 6px; border-radius: 8px; border: 1px solid var(--border); }
+    .meta-item strong { display: block; color: var(--accent); font-size: 1rem; }
+    .meta-item span { font-size: 0.75rem; color: var(--muted); }
+    .error-msg { color: var(--red); font-size: 0.85rem; margin-bottom: 10px; }
+
+    /* Palette */
+    .palette { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+    .q-dot {
+      width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--border);
+      background: var(--bg); color: var(--muted); font-weight: 700; cursor: pointer;
+    }
+    .q-dot.active { border: 2px solid var(--accent); color: var(--accent); }
+    .q-dot.answered { background: rgba(16, 185, 129, 0.2); border-color: var(--green); color: var(--green); }
+    .q-dot.review { background: rgba(245, 158, 11, 0.2); border-color: var(--amber); color: var(--amber); }
+
+    /* Question & Options */
+    .q-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .subject-tag {
+      background: rgba(0, 229, 255, 0.12); color: var(--accent);
+      padding: 4px 10px; border-radius: 6px; font-size: 0.78rem; font-weight: 700;
+    }
+    .q-text { font-size: 1.05rem; font-weight: 600; margin-bottom: 18px; }
+    .option {
+      display: flex; gap: 10px; align-items: flex-start;
+      background: var(--bg); border: 1px solid var(--border);
+      padding: 13px 14px; border-radius: 10px; margin-bottom: 10px;
+      cursor: pointer; transition: 0.15s;
+    }
+    .option:hover { border-color: var(--accent); }
+    .option.selected { border-color: var(--accent); background: rgba(0, 229, 255, 0.1); }
+    .opt-label { font-weight: 800; color: var(--accent); min-width: 22px; }
+
+    .actions { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; margin-top: 16px; }
+
+    /* Result Screen */
+    .score-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin: 16px 0; }
+    .stat-box { background: var(--bg); border: 1px solid var(--border); padding: 14px; border-radius: 10px; text-align: center; }
+    .stat-box h3 { font-size: 1.4rem; margin-bottom: 2px; }
+    .stat-box p { font-size: 0.8rem; color: var(--muted); }
+    .sub-row {
+      display: flex; justify-content: space-between; padding: 10px 12px;
+      background: var(--bg); border-radius: 8px; margin-bottom: 8px; font-size: 0.9rem;
+    }
+    .review-item { border-left: 4px solid var(--border); padding-left: 14px; margin-bottom: 18px; }
+    .review-item.correct { border-color: var(--green); }
+    .review-item.wrong { border-color: var(--red); }
+    .exp-box { background: var(--bg); padding: 10px 12px; border-radius: 8px; margin-top: 8px; font-size: 0.88rem; color: var(--muted); }
+    .footer-note { text-align: center; color: var(--muted); font-size: 0.8rem; margin-top: 24px; padding-bottom: 20px; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- SCREEN 1: LOGIN -->
+  <div id="loginScreen" class="login-box">
+    <div class="card">
+      <div class="badge">PRELIMS TEST SERIES 2026</div>
+      <h1 style="font-size:1.6rem; margin-bottom:4px;">Rahul <span style="color:var(--accent)">IAS</span> Academy</h1>
+      <p style="color:var(--muted); font-size:0.9rem; margin-bottom:14px;">All-India UPSC Prelims Mock Portal</p>
+
+      <div class="meta-grid">
+        <div class="meta-item"><strong>10 Qs</strong><span>Demo Set</span></div>
+        <div class="meta-item"><strong>12 Min</strong><span>Live Timer</span></div>
+        <div class="meta-item"><strong>+2 / -0.66</strong><span>UPSC Pattern</span></div>
+      </div>
+
+      <div id="loginError" class="error-msg hidden"></div>
+
+      <div class="input-group">
+        <label>Student Full Name</label>
+        <input type="text" id="studentName" placeholder="e.g. Amit Verma" />
+      </div>
+      <div class="input-group">
+        <label>WhatsApp / Mobile Number</label>
+        <input type="tel" id="studentPhone" placeholder="10-digit mobile number" maxlength="10" />
+      </div>
+      <div class="input-group">
+        <label>Batch Access Code <span style="color:var(--accent)">(Demo: RAHUL2026)</span></label>
+        <input type="text" id="batchCode" placeholder="Enter Batch Code" value="RAHUL2026" />
+      </div>
+
+      <button class="btn" style="width:100%;" onclick="startExam()">Start Mock Test →</button>
+    </div>
+    <p class="footer-note">Powered by Rahul IAS Academy • Official Student Portal</p>
+  </div>
+
+  <!-- SCREEN 2: EXAM ARENA -->
+  <div id="examScreen" class="hidden">
+    <div class="topbar">
+      <div class="brand">Rahul <span>IAS</span> Academy</div>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <div id="timerDisplay" class="timer">12:00</div>
+        <button class="btn btn-red" style="padding:7px 12px; font-size:0.85rem;" onclick="confirmSubmit()">Submit</button>
+      </div>
+    </div>
+
+    <div class="card" style="padding:14px;">
+      <div style="font-size:0.8rem; color:var(--muted); margin-bottom:8px;">Question Palette</div>
+      <div id="palette" class="palette"></div>
+    </div>
+
+    <div class="card">
+      <div class="q-header">
+        <span id="qCounter" style="color:var(--muted); font-size:0.9rem;">Question 1 of 10</span>
+        <span id="qSubject" class="subject-tag">Polity</span>
+      </div>
+      <div id="qText" class="q-text"></div>
+      <div id="optionsContainer"></div>
+
+      <div class="actions">
+        <div style="display:flex; gap:8px;">
+          <button class="btn btn-outline" onclick="clearResponse()">Clear</button>
+          <button class="btn btn-amber" onclick="toggleReview()">Mark Review</button>
+        </div>
+        <div style="display:flex; gap:8px;">
+          <button class="btn btn-outline" onclick="prevQ()">← Prev</button>
+          <button class="btn" onclick="nextQ()">Save & Next →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREEN 3: RESULT & ANALYTICS -->
+  <div id="resultScreen" class="hidden">
+    <div class="card">
+      <div class="badge">OFFICIAL SCORECARD</div>
+      <h2 style="margin-bottom:4px;">Rahul <span style="color:var(--accent)">IAS</span> Academy</h2>
+      <p id="studentMeta" style="color:var(--muted); font-size:0.9rem;"></p>
+      <p id="syncStatus" style="font-size:0.8rem; color:var(--accent); margin-top:6px;"></p>
+
+      <div class="score-grid">
+        <div class="stat-box"><h3 id="resScore" style="color:var(--accent)">0.00</h3><p>UPSC Score</p></div>
+        <div class="stat-box"><h3 id="resAcc" style="color:var(--text)">0%</h3><p>Accuracy</p></div>
+        <div class="stat-box"><h3 id="resCorrect" style="color:var(--green)">0</h3><p>Correct</p></div>
+        <div class="stat-box"><h3 id="resWrong" style="color:var(--red)">0</h3><p>Wrong</p></div>
+      </div>
+
+      <h4 style="margin:14px 0 8px; font-size:0.95rem;">Subject-wise Performance</h4>
+      <div id="subjectBreakdown"></div>
+
+      <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:16px;">
+        <button class="btn btn-green" onclick="shareWhatsApp()">Share Score on WhatsApp</button>
+        <button class="btn btn-outline" onclick="location.reload()">Take Again</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-bottom:14px;">Detailed Solutions & Explanations</h3>
+      <div id="solutionsContainer"></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // STEP 3 MEIN YAHAN GOOGLE APPS SCRIPT URL PASTE KARENGE:
+  const GOOGLE_SHEET_URL = "";
+  const VALID_BATCH_CODE = "RAHUL2026";
+  const EXAM_DURATION_SEC = 12 * 60; // 12 Minutes
+
+  const QUESTIONS = [
+    {
+      subject: "Polity",
+      q: "Which Article of the Constitution of India safeguards one's right to marry the person of one's choice?",
+      options: ["Article 19", "Article 21", "Article 25", "Article 29"],
+      ans: 1,
+      exp: "In the Hadiya case (2018), the Supreme Court held that the right to marry a person of one's choice is an integral part of Article 21 (Right to Life and Personal Liberty)."
+    },
+    {
+      subject: "Polity",
+      q: "Under the Indian Constitution, concentration of wealth violates:",
+      options: ["The Right to Equality", "The Directive Principles of State Policy", "The Right to Freedom", "The Concept of Welfare"],
+      ans: 1,
+      exp: "Article 39(c) under DPSP directs the State to ensure that the operation of the economic system does not result in the concentration of wealth and means of production to the common detriment."
+    },
+    {
+      subject: "History",
+      q: "With reference to the history of ancient India, Bhavabhuti, Hastimalla and Kshemeshvara were famous:",
+      options: ["Jain monks", "Playwrights", "Temple architects", "Philosophers"],
+      ans: 1,
+      exp: "Bhavabhuti (Malatimadhava), Hastimalla, and Kshemeshvara were renowned Sanskrit/Prakrit playwrights."
+    },
+    {
+      subject: "History",
+      q: "In the context of Colonial India, Shah Nawaz Khan, Prem Kumar Sehgal and Gurbaksh Singh Dhillon are remembered as:",
+      options: ["Leaders of Swadeshi Movement", "Members of the Interim Government in 1946", "Officers of the Indian National Army", "Members of the Drafting Committee"],
+      ans: 2,
+      exp: "They were the three INA officers famously tried together in the Red Fort Trials (1945–46)."
+    },
+    {
+      subject: "Geography",
+      q: "Which of the following rivers does NOT originate in India?",
+      options: ["Beas", "Chenab", "Ravi", "Sutlej"],
+      ans: 3,
+      exp: "The Sutlej originates near Lake Rakshastal in Tibet (China) and enters India through the Shipki La pass."
+    },
+    {
+      subject: "Geography",
+      q: "The 'Roaring Forties' are strong westerly winds found primarily in:",
+      options: ["Northern Hemisphere between 40° and 50°", "Southern Hemisphere between 40° and 50°", "Equatorial Doldrums", "Polar Easterlies belt"],
+      ans: 1,
+      exp: "Due to less landmass in the Southern Hemisphere between 40°S and 50°S, westerly winds blow with great strength, known as the Roaring Forties."
+    },
+    {
+      subject: "Economy",
+      q: "If the RBI decides to adopt an expansionist monetary policy, which of the following would it NOT do?",
+      options: ["Cut and optimize the Statutory Liquidity Ratio", "Increase the Marginal Standing Facility Rate", "Cut the Bank Rate and Repo Rate", "Buy government securities in Open Market Operations"],
+      ans: 1,
+      exp: "Increasing the MSF rate makes borrowing costlier and reduces liquidity (contractionary), whereas expansionist policy aims to increase money supply."
+    },
+    {
+      subject: "Economy",
+      q: "Which of the following is included in the Capital Budget of the Government of India?",
+      options: ["Expenditure on acquisition of assets like roads and buildings", "Loans received from foreign governments", "Loans and advances granted to the States", "All of the above"],
+      ans: 3,
+      exp: "Capital Budget includes both Capital Receipts (foreign loans, disinvestment) and Capital Expenditure (asset creation, loans to states)."
+    },
+    {
+      subject: "Polity",
+      q: "A Money Bill passed by the Lok Sabha can be delayed by the Rajya Sabha for a maximum period of:",
+      options: ["14 days", "30 days", "60 days", "6 months"],
+      ans: 0,
+      exp: "Under Article 109, the Rajya Sabha must return a Money Bill within 14 days, failing which it is deemed to have been passed by both Houses."
+    },
+    {
+      subject: "Geography",
+      q: "Siachen Glacier is situated to the:",
+      options: ["East of Aksai Chin", "East of Leh", "North of Gilgit", "North of Nubra Valley"],
+      ans: 3,
+      exp: "Siachen Glacier lies in the eastern Karakoram range, immediately north of the Nubra Valley."
+    }
+  ];
+
+  let student = { name: "", phone: "", batch: "" };
+  let currentIdx = 0;
+  let answers = new Array(QUESTIONS.length).fill(null);
+  let markedReview = new Array(QUESTIONS.length).fill(false);
+  let timeLeft = EXAM_DURATION_SEC;
+  let timerInterval = null;
+  let finalReport = {};
+
+  function startExam() {
+    const name = document.getElementById("studentName").value.trim();
+    const phone = document.getElementById("studentPhone").value.trim();
+    const batch = document.getElementById("batchCode").value.trim().toUpperCase();
+    const err = document.getElementById("loginError");
+
+    if (!name || !/^\d{10}$/.test(phone)) {
+      err.textContent = "Please enter your full name and a valid 10-digit mobile number.";
+      err.classList.remove("hidden");
+      return;
+    }
+    if (batch !== VALID_BATCH_CODE) {
+      err.textContent = "Invalid Batch Code. Use RAHUL2026 for demo.";
+      err.classList.remove("hidden");
+      return;
+    }
+
+    err.classList.add("hidden");
+    student = { name, phone, batch };
+    document.getElementById("loginScreen").classList.add("hidden");
+    document.getElementById("examScreen").classList.remove("hidden");
+    renderQuestion();
+    startTimer();
+  }
+
+  function startTimer() {
+    updateTimerUI();
+    timerInterval = setInterval(() => {
+      timeLeft--;
+      updateTimerUI();
+      if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+        submitExam();
+      }
+    }, 1000);
+  }
+
+  function updateTimerUI() {
+    const m = String(Math.floor(timeLeft / 60)).padStart(2, "0");
+    const s = String(timeLeft % 60).padStart(2, "0");
+    const el = document.getElementById("timerDisplay");
+    el.textContent = `${m}:${s}`;
+    if (timeLeft <= 120) el.classList.add("danger");
+  }
+
+  function renderPalette() {
+    const pal = document.getElementById("palette");
+    pal.innerHTML = "";
+    QUESTIONS.forEach((_, i) => {
+      const btn = document.createElement("button");
+      btn.className = "q-dot";
+      if (i === currentIdx) btn.classList.add("active");
+      if (markedReview[i]) btn.classList.add("review");
+      else if (answers[i] !== null) btn.classList.add("answered");
+      btn.textContent = i + 1;
+      btn.onclick = () => { currentIdx = i; renderQuestion(); };
+      pal.appendChild(btn);
+    });
+  }
+
+  function renderQuestion() {
+    const q = QUESTIONS[currentIdx];
+    document.getElementById("qCounter").textContent = `Question ${currentIdx + 1} of ${QUESTIONS.length}`;
+    document.getElementById("qSubject").textContent = q.subject;
+    document.getElementById("qText").textContent = q.q;
+
+    const optBox = document.getElementById("optionsContainer");
+    optBox.innerHTML = "";
+    const labels = ["A", "B", "C", "D"];
+    q.options.forEach((opt, idx) => {
+      const div = document.createElement("div");
+      div.className = "option" + (answers[currentIdx] === idx ? " selected" : "");
+      div.innerHTML = `<span class="opt-label">${labels[idx]}.</span><span>${opt}</span>`;
+      div.onclick = () => {
+        answers[currentIdx] = idx;
+        renderQuestion();
+      };
+      optBox.appendChild(div);
+    });
+    renderPalette();
+  }
+
+  function clearResponse() { answers[currentIdx] = null; renderQuestion(); }
+  function toggleReview() { markedReview[currentIdx] = !markedReview[currentIdx]; renderPalette(); }
+  function prevQ() { if (currentIdx > 0) { currentIdx--; renderQuestion(); } }
+  function nextQ() { if (currentIdx < QUESTIONS.length - 1) { currentIdx++; renderQuestion(); } else confirmSubmit(); }
+
+  function confirmSubmit() {
+    const attempted = answers.filter(a => a !== null).length;
+    if (confirm(`You have attempted ${attempted}/${QUESTIONS.length} questions. Submit test now?`)) {
+      submitExam();
+    }
+  }
+
+  function submitExam() {
+    clearInterval(timerInterval);
+    let correct = 0, wrong = 0, unattempted = 0;
+    const subStats = {};
+
+    QUESTIONS.forEach((q, i) => {
+      if (!subStats[q.subject]) subStats[q.subject] = { total: 0, correct: 0 };
+      subStats[q.subject].total++;
+      if (answers[i] === null) unattempted++;
+      else if (answers[i] === q.ans) { correct++; subStats[q.subject].correct++; }
+      else wrong++;
+    });
+
+    const score = (correct * 2 - wrong * (2 / 3)).toFixed(2);
+    const attempted = correct + wrong;
+    const accuracy = attempted ? Math.round((correct / attempted) * 100) : 0;
+    const timeTakenSec = EXAM_DURATION_SEC - timeLeft;
+    const timeTakenStr = `${Math.floor(timeTakenSec / 60)}m ${timeTakenSec % 60}s`;
+
+    finalReport = { ...student, score, accuracy, correct, wrong, unattempted, timeTaken: timeTakenStr };
+
+    document.getElementById("examScreen").classList.add("hidden");
+    document.getElementById("resultScreen").classList.remove("hidden");
+
+    document.getElementById("studentMeta").textContent = `${student.name} (${student.phone}) • Batch: ${student.batch} • Time: ${timeTakenStr}`;
+    document.getElementById("resScore").textContent = score;
+    document.getElementById("resAcc").textContent = `${accuracy}%`;
+    document.getElementById("resCorrect").textContent = correct;
+    document.getElementById("resWrong").textContent = wrong;
+
+    const subBox = document.getElementById("subjectBreakdown");
+    subBox.innerHTML = "";
+    Object.keys(subStats).forEach(sub => {
+      const s = subStats[sub];
+      subBox.innerHTML += `<div class="sub-row"><span>${sub}</span><strong>${s.correct} / ${s.total} Correct</strong></div>`;
+    });
+
+    const solBox = document.getElementById("solutionsContainer");
+    solBox.innerHTML = "";
+    const labels = ["A", "B", "C", "D"];
+    QUESTIONS.forEach((q, i) => {
+      const uAns = answers[i];
+      const status = uAns === null ? "unattempted" : (uAns === q.ans ? "correct" : "wrong");
+      solBox.innerHTML += `
+        <div class="review-item ${status}">
+          <div style="font-weight:600; margin-bottom:6px;">Q${i + 1}. ${q.q}</div>
+          <div style="font-size:0.85rem;">
+            Your Answer: <strong>${uAns === null ? "Skipped" : labels[uAns] + ". " + q.options[uAns]}</strong> |
+            Correct: <strong style="color:var(--green)">${labels[q.ans]}. ${q.options[q.ans]}</strong>
+          </div>
+          <div class="exp-box"><strong>Explanation:</strong> ${q.exp}</div>
+        </div>`;
+    });
+
+    syncToGoogleSheet(finalReport);
+  }
+
+  function syncToGoogleSheet(data) {
+    const statusEl = document.getElementById("syncStatus");
+    if (!GOOGLE_SHEET_URL) {
+      statusEl.textContent = "Demo Mode (Google Sheet sync not connected yet)";
+      return;
+    }
+    statusEl.textContent = "Saving result to Academy Leaderboard...";
+    fetch(GOOGLE_SHEET_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    })
+    .then(() => { statusEl.textContent = "✓ Result synced to Rahul IAS Academy Sheet"; })
+    .catch(() => { statusEl.textContent = "Could not sync to sheet (offline)."; });
+  }
+
+  function shareWhatsApp() {
+    const msg = `*Rahul IAS Academy — Prelims Mock Scorecard*\nStudent: ${finalReport.name}\nScore: *${finalReport.score} / ${QUESTIONS.length * 2}*\nAccuracy: ${finalReport.accuracy}% (Correct: ${finalReport.correct}, Wrong: ${finalReport.wrong})\nTime Taken: ${finalReport.timeTaken}`;
+    window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, "_blank");
+  }
+</script>
+</body>
+</html>
