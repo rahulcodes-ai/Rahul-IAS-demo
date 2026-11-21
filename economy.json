@@ -1,0 +1,114 @@
+[
+  {
+    "subject": "Economy",
+    "q": "If the RBI decides to adopt an expansionist monetary policy, which of the following would it NOT do?",
+    "options": ["Cut and optimize the Statutory Liquidity Ratio", "Increase the Marginal Standing Facility Rate", "Cut the Bank Rate and Repo Rate", "Buy government securities in Open Market Operations"],
+    "ans": 1,
+    "exp": "Increasing the MSF rate makes borrowing costlier and reduces liquidity (contractionary), whereas expansionist policy increases money supply."
+  },
+  {
+    "subject": "Economy",
+    "q": "Which of the following is included in the Capital Budget of the Government of India?",
+    "options": ["Expenditure on acquisition of assets like roads and buildings", "Loans received from foreign governments", "Loans and advances granted to the States", "All of the above"],
+    "ans": 3,
+    "exp": "Capital Budget includes both Capital Receipts (foreign loans, disinvestment) and Capital Expenditure (asset creation, loans to states)."
+  },
+  {
+    "subject": "Economy",
+    "q": "The term 'Repo Rate' refers to the rate at which:",
+    "options": ["Commercial banks lend money to the RBI", "RBI lends short-term money to commercial banks against government securities", "Commercial banks lend to their prime customers", "Government borrows from the World Bank"],
+    "ans": 1,
+    "exp": "Repo (Repurchase Option) Rate is the interest rate at which the RBI lends short-term funds to commercial banks against approved government securities."
+  },
+  {
+    "subject": "Economy",
+    "q": "Which of the following measures is most likely to cause inflation in an economy?",
+    "options": ["Repayment of public debt", "Borrowing from the public to finance a budget deficit", "Creation of new money to finance a budget deficit", "Increasing the Cash Reserve Ratio (CRR)"],
+    "ans": 2,
+    "exp": "Printing/creating new money (deficit monetization) directly increases money supply without a matching rise in output, making it the most inflationary."
+  },
+  {
+    "subject": "Economy",
+    "q": "In India, the 'Lender of Last Resort' function of the RBI refers to:",
+    "options": ["Providing loans to farmers during drought", "Providing liquidity to banks having temporary financial difficulty", "Funding state governments for infrastructure", "Financing trade deficits of exporters"],
+    "ans": 1,
+    "exp": "As Lender of Last Resort, the RBI provides emergency liquidity to solvent commercial banks facing temporary cash shortages to maintain financial stability."
+  },
+  {
+    "subject": "Economy",
+    "q": "Which of the following is NOT included in the calculation of India's Foreign Exchange Reserves?",
+    "options": ["Foreign Currency Assets", "Gold Reserves", "Special Drawing Rights (SDRs)", "Sovereign Gold Bonds held by domestic citizens"],
+    "ans": 3,
+    "exp": "India's Forex Reserves comprise Foreign Currency Assets (FCAs), Gold, SDRs, and Reserve Tranche Position (RTP) with the IMF."
+  },
+  {
+    "subject": "Economy",
+    "q": "What does 'Stagflation' mean in macroeconomics?",
+    "options": ["High economic growth with low inflation", "Low inflation with falling unemployment", "High inflation combined with stagnant economic growth and high unemployment", "Deflation during a period of economic boom"],
+    "ans": 2,
+    "exp": "Stagflation is a combination of economic stagnation (slow growth + high unemployment) and persistent high inflation."
+  },
+  {
+    "subject": "Economy",
+    "q": "The 'Gini Coefficient' is used to measure:",
+    "options": ["Inflation rate in consumer goods", "Income or wealth inequality within a population", "Balance of Payments deficit", "Fiscal deficit as a percentage of GDP"],
+    "ans": 1,
+    "exp": "The Gini Coefficient ranges from 0 (perfect equality) to 1 (maximum inequality) and measures income/wealth distribution."
+  },
+  {
+    "subject": "Economy",
+    "q": "Which of the following best describes 'Disguised Unemployment'?",
+    "options": ["Unemployment caused by seasonal changes in agriculture", "More people employed in a job than actually required, with zero marginal productivity", "Temporary unemployment while switching jobs", "Unemployment due to mismatch of skills in the tech sector"],
+    "ans": 1,
+    "exp": "Disguised unemployment occurs when removing surplus workers does not reduce total output, meaning their marginal productivity is zero."
+  },
+  {
+    "subject": "Economy",
+    "q": "The Monetary Policy Committee (MPC) of India is chaired by:",
+    "options": ["Union Finance Minister", "Governor of the Reserve Bank of India", "Chief Economic Adviser", "Chairman of NITI Aayog"],
+    "ans": 1,
+    "exp": "Under the RBI Act, 1934 (amended in 2016), the 6-member MPC is chaired ex-officio by the Governor of the RBI."
+  },
+  {
+    "subject": "Economy",
+    "q": "Which of the following is a Direct Tax in India?",
+    "options": ["Goods and Services Tax (GST)", "Customs Duty", "Corporate Income Tax", "Central Excise Duty"],
+    "ans": 2,
+    "exp": "Corporate Tax is levied directly on the net income/profits of companies and cannot be shifted to another party, making it a direct tax."
+  },
+  {
+    "subject": "Economy",
+    "q": "In the context of Balance of Payments (BoP), which of the following is part of the Current Account?",
+    "options": ["Foreign Direct Investment (FDI)", "External Commercial Borrowings (ECB)", "Remittances sent by Indians working abroad", "Foreign Portfolio Investment (FPI)"],
+    "ans": 2,
+    "exp": "The Current Account records trade in goods, services, and net transfer payments (like remittances); FDI, FPI, and ECBs fall under the Capital Account."
+  },
+  {
+    "subject": "Economy",
+    "q": "The 'Base Effect' in inflation measurement refers to:",
+    "options": ["Impact of drastic deficiency in supply due to failure of crops", "Impact of rapid economic growth on demand", "Impact of price levels of the previous year on the calculation of the current inflation rate", "Impact of RBI's base rate on home loans"],
+    "ans": 2,
+    "exp": "Base effect occurs when an unusually high or low price level in the corresponding period of the previous year distorts the current year's percentage inflation."
+  },
+  {
+    "subject": "Economy",
+    "q": "Which institution publishes the 'World Economic Outlook' report?",
+    "options": ["World Bank", "International Monetary Fund (IMF)", "World Trade Organization (WTO)", "World Economic Forum (WEF)"],
+    "ans": 1,
+    "exp": "The World Economic Outlook (WEO) is a flagship biannual survey published by the International Monetary Fund (IMF)."
+  },
+  {
+    "subject": "Economy",
+    "q": "What is 'Primary Deficit' in the Union Budget?",
+    "options": ["Revenue Deficit minus Grants for creation of capital assets", "Fiscal Deficit minus Interest Payments", "Total Expenditure minus Total Receipts", "Capital Expenditure minus Capital Receipts"],
+    "ans": 1,
+    "exp": "Primary Deficit = Fiscal Deficit − Interest Payments on past borrowings. It shows current-year borrowing requirements excluding past debt servicing."
+  },
+  {
+    "subject": "Economy",
+    "q": "Under the 'Priority Sector Lending' norms of RBI, which of the following is included?",
+    "options": ["Agriculture and MSMEs", "Education and Housing", "Renewable Energy and Social Infrastructure", "All of the above"],
+    "ans": 3,
+    "exp": "RBI's Priority Sector Lending covers Agriculture, MSMEs, Export Credit, Education, Housing, Social Infrastructure, Renewable Energy, and Weaker Sections."
+  }
+]
