@@ -1,0 +1,100 @@
+[
+  {
+    "subject": "Environment",
+    "q": "Which of the following Protected Areas are located in the Cauvery basin?",
+    "options": ["Nagarhole, Sathyamangalam, Wayanad", "Papikonda, Nagarhole, Wayanad", "Nagarhole, Papikonda, Sathyamangalam", "Sathyamangalam, Papikonda, Wayanad"],
+    "ans": 0,
+    "exp": "Nagarhole, Sathyamangalam, and Wayanad lie in the Cauvery basin, whereas Papikonda lies in the Godavari basin."
+  },
+  {
+    "subject": "Environment",
+    "q": "Under the Wildlife (Protection) Act, 1972, which Schedule provides the highest degree of protection to endangered species?",
+    "options": ["Schedule I", "Schedule II", "Schedule III", "Schedule IV"],
+    "ans": 0,
+    "exp": "Schedule I grants absolute protection; offences under this schedule attract the highest penalties."
+  },
+  {
+    "subject": "Environment",
+    "q": "The 'Ramsar Convention' is an international treaty for the conservation and sustainable use of:",
+    "options": ["Coral Reefs", "Wetlands", "Migratory Birds", "Desert Ecosystems"],
+    "ans": 1,
+    "exp": "Adopted in Ramsar (Iran) in 1971, the Ramsar Convention provides the global framework for wetland conservation."
+  },
+  {
+    "subject": "Environment",
+    "q": "Which of the following is the ONLY floating National Park in the world?",
+    "options": ["Kaziranga National Park", "Keibul Lamjao National Park", "Sundarbans National Park", "Bhitarkanika National Park"],
+    "ans": 1,
+    "exp": "Keibul Lamjao National Park in Manipur floats on Loktak Lake and is the last natural habitat of the endangered Sangai (brow-antlered deer)."
+  },
+  {
+    "subject": "Environment",
+    "q": "The 'Montreal Protocol' (1987) is associated with:",
+    "options": ["Reducing greenhouse gas emissions", "Phasing out ozone-depleting substances (ODS)", "Preventing cross-border movement of hazardous waste", "Conserving biological diversity"],
+    "ans": 1,
+    "exp": "The Montreal Protocol under the Vienna Convention successfully phased out CFCs, halons, and other ozone-depleting substances."
+  },
+  {
+    "subject": "Environment",
+    "q": "What is 'Eutrophication' in a water body?",
+    "options": ["Gradual cooling of deep ocean waters", "Excessive nutrient enrichment leading to algal blooms and oxygen depletion", "Increase in water salinity due to evaporation", "Natural filtration of river water by mangroves"],
+    "ans": 1,
+    "exp": "Excess nitrates and phosphates from agricultural runoff trigger algal blooms, which decompose and deplete dissolved oxygen, killing aquatic life."
+  },
+  {
+    "subject": "Environment",
+    "q": "Which of the following is NOT a Biodiversity Hotspot in India?",
+    "options": ["Western Ghats", "Eastern Himalayas", "Indo-Burma Region", "Thar Desert"],
+    "ans": 3,
+    "exp": "India's 4 Biodiversity Hotspots are the Himalayas, Western Ghats, Indo-Burma, and Sundaland (Nicobar Islands)."
+  },
+  {
+    "subject": "Environment",
+    "q": "In an ecosystem, 'Biomagnification' refers to:",
+    "options": ["Rapid reproduction of invasive plant species", "Increasing concentration of non-biodegradable toxins at successively higher trophic levels", "Expansion of forest canopy cover", "Increase in biomass from producers to top carnivores"],
+    "ans": 1,
+    "exp": "Persistent pollutants like DDT or mercury accumulate in organisms and increase in concentration as they move up the food chain."
+  },
+  {
+    "subject": "Environment",
+    "q": "Which of the following gases is NOT listed among the original six greenhouse gases under the Kyoto Protocol?",
+    "options": ["Methane (CH4)", "Nitrous Oxide (N2O)", "Sulphur Hexafluoride (SF6)", "Carbon Monoxide (CO)"],
+    "ans": 3,
+    "exp": "The 6 Kyoto gases are CO2, CH4, N2O, HFCs, PFCs, and SF6. Carbon monoxide (CO) is an air pollutant, not a Kyoto GHG."
+  },
+  {
+    "subject": "Environment",
+    "q": "The 'Red Data Book' containing lists of threatened species is published by:",
+    "options": ["UNEP", "WWF", "IUCN", "CITES"],
+    "ans": 2,
+    "exp": "The International Union for Conservation of Nature (IUCN) maintains the Red List / Red Data Book classifying species conservation status."
+  },
+  {
+    "subject": "Environment",
+    "q": "Which National Park is famous for being the primary home of the Asiatic Lion?",
+    "options": ["Jim Corbett National Park", "Gir National Park", "Ranthambore National Park", "Kanha National Park"],
+    "ans": 1,
+    "exp": "Gir National Park and Wildlife Sanctuary in Gujarat is the only natural wild habitat of the Asiatic Lion."
+  },
+  {
+    "subject": "Environment",
+    "q": "The 'Nagoya Protocol' (2010) under the Convention on Biological Diversity deals with:",
+    "options": ["Biosafety of genetically modified organisms", "Access to genetic resources and fair sharing of benefits (ABS)", "Protection of marine mammals", "Control of persistent organic pollutants"],
+    "ans": 1,
+    "exp": "The Nagoya Protocol provides a legal framework for Access and Benefit-Sharing (ABS) of genetic resources; Cartagena Protocol deals with biosafety."
+  },
+  {
+    "subject": "Environment",
+    "q": "Which of the following is a 'Keystone Species' example in an ecosystem?",
+    "options": ["A species with the largest population size only", "A species whose removal disproportionately disrupts the entire ecosystem structure", "Any domesticated animal introduced by humans", "A species found exclusively in polar regions"],
+    "ans": 1,
+    "exp": "Keystone species (like tigers, sea otters, or elephants) play a critical ecological role far greater than their abundance; their loss collapses the ecosystem."
+  },
+  {
+    "subject": "Environment",
+    "q": "Lichens are considered good bio-indicators of:",
+    "options": ["Water pollution by heavy metals", "Air pollution, especially Sulphur Dioxide (SO2)", "Soil salinity", "Noise pollution"],
+    "ans": 1,
+    "exp": "Lichens are extremely sensitive to Sulphur Dioxide (SO2) and fail to grow in heavily polluted urban or industrial air."
+  }
+]
