@@ -9,7 +9,6 @@
     :root {
       --bg: #0b0f19;
       --card: #131b2e;
-      --card-light: #1b2640;
       --border: #253354;
       --text: #e8eefc;
       --muted: #8b9bb4;
@@ -50,16 +49,14 @@
       cursor: pointer; font-size: 0.95rem; transition: 0.2s;
     }
     .btn:hover { opacity: 0.9; transform: translateY(-1px); }
-    .btn-outline {
-      background: transparent; color: var(--text); border: 1px solid var(--border);
-    }
-    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
+    .btn-outline:hover, .btn-outline.active-filter { border-color: var(--accent); color: var(--accent); background: rgba(0, 229, 255, 0.08); }
     .btn-amber { background: var(--amber); color: #1a1200; }
     .btn-green { background: var(--green); color: #022c22; }
     .btn-red { background: var(--red); color: #fff; }
 
     /* Login Screen */
-    .login-box { max-width: 460px; margin: 36px auto; }
+    .login-box { max-width: 480px; margin: 28px auto; }
     .badge {
       display: inline-block; background: rgba(0, 229, 255, 0.12); color: var(--accent);
       border: 1px solid rgba(0, 229, 255, 0.3); padding: 4px 10px;
@@ -67,47 +64,53 @@
     }
     .input-group { margin-bottom: 14px; }
     .input-group label { display: block; font-size: 0.85rem; color: var(--muted); margin-bottom: 6px; }
-    .input-group input {
+    .input-group input, .input-group select {
       width: 100%; padding: 11px 12px; border-radius: 8px;
       border: 1px solid var(--border); background: var(--bg); color: var(--text);
       font-size: 0.95rem; outline: none;
     }
-    .input-group input:focus { border-color: var(--accent); }
-    .meta-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
-      margin: 16px 0; text-align: center;
-    }
+    .input-group input:focus, .input-group select:focus { border-color: var(--accent); }
+    .meta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 14px 0; text-align: center; }
     .meta-item { background: var(--bg); padding: 10px 6px; border-radius: 8px; border: 1px solid var(--border); }
     .meta-item strong { display: block; color: var(--accent); font-size: 1rem; }
     .meta-item span { font-size: 0.75rem; color: var(--muted); }
     .error-msg { color: var(--red); font-size: 0.85rem; margin-bottom: 10px; }
 
     /* Palette */
-    .palette { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+    .palette { display: flex; flex-wrap: wrap; gap: 7px; max-height: 120px; overflow-y: auto; }
     .q-dot {
-      width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--border);
-      background: var(--bg); color: var(--muted); font-weight: 700; cursor: pointer;
+      width: 34px; height: 34px; border-radius: 8px; border: 1px solid var(--border);
+      background: var(--bg); color: var(--muted); font-weight: 700; cursor: pointer; font-size: 0.85rem;
     }
     .q-dot.active { border: 2px solid var(--accent); color: var(--accent); }
     .q-dot.answered { background: rgba(16, 185, 129, 0.2); border-color: var(--green); color: var(--green); }
     .q-dot.review { background: rgba(245, 158, 11, 0.2); border-color: var(--amber); color: var(--amber); }
 
-    /* Question & Options */
+    /* Question & Options + Elimination */
     .q-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
     .subject-tag {
       background: rgba(0, 229, 255, 0.12); color: var(--accent);
       padding: 4px 10px; border-radius: 6px; font-size: 0.78rem; font-weight: 700;
     }
     .q-text { font-size: 1.05rem; font-weight: 600; margin-bottom: 18px; }
+    .option-row {
+      display: flex; align-items: center; gap: 8px; margin-bottom: 10px;
+    }
     .option {
-      display: flex; gap: 10px; align-items: flex-start;
+      flex: 1; display: flex; gap: 10px; align-items: flex-start;
       background: var(--bg); border: 1px solid var(--border);
-      padding: 13px 14px; border-radius: 10px; margin-bottom: 10px;
-      cursor: pointer; transition: 0.15s;
+      padding: 13px 14px; border-radius: 10px; cursor: pointer; transition: 0.15s;
     }
     .option:hover { border-color: var(--accent); }
     .option.selected { border-color: var(--accent); background: rgba(0, 229, 255, 0.1); }
+    .option.eliminated { opacity: 0.4; text-decoration: line-through; }
     .opt-label { font-weight: 800; color: var(--accent); min-width: 22px; }
+    .elim-btn {
+      background: var(--bg); border: 1px solid var(--border); color: var(--muted);
+      width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 0.85rem;
+      flex-shrink: 0; transition: 0.15s;
+    }
+    .elim-btn:hover, .elim-btn.active { border-color: var(--red); color: var(--red); background: rgba(244, 63, 94, 0.1); }
 
     .actions { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; margin-top: 16px; }
 
@@ -120,6 +123,7 @@
       display: flex; justify-content: space-between; padding: 10px 12px;
       background: var(--bg); border-radius: 8px; margin-bottom: 8px; font-size: 0.9rem;
     }
+    .filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
     .review-item { border-left: 4px solid var(--border); padding-left: 14px; margin-bottom: 18px; }
     .review-item.correct { border-color: var(--green); }
     .review-item.wrong { border-color: var(--red); }
@@ -131,20 +135,34 @@
 
 <div class="container">
 
-  <!-- SCREEN 1: LOGIN -->
+  <!-- SCREEN 1: LOGIN & MODE SELECTOR -->
   <div id="loginScreen" class="login-box">
     <div class="card">
       <div class="badge">PRELIMS TEST SERIES 2026</div>
       <h1 style="font-size:1.6rem; margin-bottom:4px;">Rahul <span style="color:var(--accent)">IAS</span> Academy</h1>
-      <p style="color:var(--muted); font-size:0.9rem; margin-bottom:14px;">All-India UPSC Prelims Mock Portal</p>
+      <p id="bankInfo" style="color:var(--muted); font-size:0.88rem; margin-bottom:14px;">Loading question bank...</p>
 
       <div class="meta-grid">
-        <div class="meta-item"><strong>10 Qs</strong><span>Demo Set</span></div>
-        <div class="meta-item"><strong>12 Min</strong><span>Live Timer</span></div>
+        <div class="meta-item"><strong id="metaQs">10 Qs</strong><span>Questions</span></div>
+        <div class="meta-item"><strong id="metaTime">12 Min</strong><span>Live Timer</span></div>
         <div class="meta-item"><strong>+2 / -0.66</strong><span>UPSC Pattern</span></div>
       </div>
 
       <div id="loginError" class="error-msg hidden"></div>
+
+      <div class="input-group">
+        <label>Select Test Mode</label>
+        <select id="testMode" onchange="onModeChange()">
+          <option value="demo">Quick Demo Mock (10 Qs • 12 Min)</option>
+          <option value="full">Full-Length UPSC Static Mock (Up to 100 Qs • 120 Min)</option>
+          <option value="sectional">Subject-Wise Sectional Test</option>
+        </select>
+      </div>
+
+      <div id="subjectGroup" class="input-group hidden">
+        <label>Choose Subject</label>
+        <select id="subjectSelect" onchange="onModeChange()"></select>
+      </div>
 
       <div class="input-group">
         <label>Student Full Name</label>
@@ -159,7 +177,7 @@
         <input type="text" id="batchCode" placeholder="Enter Batch Code" value="RAHUL2026" />
       </div>
 
-      <button class="btn" style="width:100%;" onclick="startExam()">Start Mock Test →</button>
+      <button id="startBtn" class="btn" style="width:100%;" onclick="startExam()" disabled>Loading Bank...</button>
     </div>
     <p class="footer-note">Powered by Rahul IAS Academy • Official Student Portal</p>
   </div>
@@ -175,13 +193,16 @@
     </div>
 
     <div class="card" style="padding:14px;">
-      <div style="font-size:0.8rem; color:var(--muted); margin-bottom:8px;">Question Palette</div>
+      <div style="display:flex; justify-content:space-between; font-size:0.8rem; color:var(--muted); margin-bottom:8px;">
+        <span>Question Palette</span>
+        <span>Tip: Tap ✕ to eliminate options</span>
+      </div>
       <div id="palette" class="palette"></div>
     </div>
 
     <div class="card">
       <div class="q-header">
-        <span id="qCounter" style="color:var(--muted); font-size:0.9rem;">Question 1 of 10</span>
+        <span id="qCounter" style="color:var(--muted); font-size:0.9rem;">Question 1</span>
         <span id="qSubject" class="subject-tag">Polity</span>
       </div>
       <div id="qText" class="q-text"></div>
@@ -220,12 +241,17 @@
 
       <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:16px;">
         <button class="btn btn-green" onclick="shareWhatsApp()">Share Score on WhatsApp</button>
-        <button class="btn btn-outline" onclick="location.reload()">Take Again</button>
+        <button class="btn btn-outline" onclick="location.reload()">Take Another Test</button>
       </div>
     </div>
 
     <div class="card">
-      <h3 style="margin-bottom:14px;">Detailed Solutions & Explanations</h3>
+      <h3 style="margin-bottom:12px;">Detailed Solutions & Explanations</h3>
+      <div class="filter-bar">
+        <button class="btn btn-outline active-filter" id="f-all" onclick="renderSolutions('all')">All</button>
+        <button class="btn btn-outline" id="f-wrong" onclick="renderSolutions('wrong')">Only Wrong</button>
+        <button class="btn btn-outline" id="f-skipped" onclick="renderSolutions('skipped')">Skipped</button>
+      </div>
       <div id="solutionsContainer"></div>
     </div>
   </div>
@@ -233,91 +259,80 @@
 </div>
 
 <script>
-  // STEP 3 MEIN YAHAN GOOGLE APPS SCRIPT URL PASTE KARENGE:
-  const GOOGLE_SHEET_URL = "";
+  const GOOGLE_SHEET_URL = ""; // Baad mein dedicated Gmail se yahan URL paste karna
   const VALID_BATCH_CODE = "RAHUL2026";
-  const EXAM_DURATION_SEC = 12 * 60; // 12 Minutes
 
-  const QUESTIONS = [
-    {
-      subject: "Polity",
-      q: "Which Article of the Constitution of India safeguards one's right to marry the person of one's choice?",
-      options: ["Article 19", "Article 21", "Article 25", "Article 29"],
-      ans: 1,
-      exp: "In the Hadiya case (2018), the Supreme Court held that the right to marry a person of one's choice is an integral part of Article 21 (Right to Life and Personal Liberty)."
-    },
-    {
-      subject: "Polity",
-      q: "Under the Indian Constitution, concentration of wealth violates:",
-      options: ["The Right to Equality", "The Directive Principles of State Policy", "The Right to Freedom", "The Concept of Welfare"],
-      ans: 1,
-      exp: "Article 39(c) under DPSP directs the State to ensure that the operation of the economic system does not result in the concentration of wealth and means of production to the common detriment."
-    },
-    {
-      subject: "History",
-      q: "With reference to the history of ancient India, Bhavabhuti, Hastimalla and Kshemeshvara were famous:",
-      options: ["Jain monks", "Playwrights", "Temple architects", "Philosophers"],
-      ans: 1,
-      exp: "Bhavabhuti (Malatimadhava), Hastimalla, and Kshemeshvara were renowned Sanskrit/Prakrit playwrights."
-    },
-    {
-      subject: "History",
-      q: "In the context of Colonial India, Shah Nawaz Khan, Prem Kumar Sehgal and Gurbaksh Singh Dhillon are remembered as:",
-      options: ["Leaders of Swadeshi Movement", "Members of the Interim Government in 1946", "Officers of the Indian National Army", "Members of the Drafting Committee"],
-      ans: 2,
-      exp: "They were the three INA officers famously tried together in the Red Fort Trials (1945–46)."
-    },
-    {
-      subject: "Geography",
-      q: "Which of the following rivers does NOT originate in India?",
-      options: ["Beas", "Chenab", "Ravi", "Sutlej"],
-      ans: 3,
-      exp: "The Sutlej originates near Lake Rakshastal in Tibet (China) and enters India through the Shipki La pass."
-    },
-    {
-      subject: "Geography",
-      q: "The 'Roaring Forties' are strong westerly winds found primarily in:",
-      options: ["Northern Hemisphere between 40° and 50°", "Southern Hemisphere between 40° and 50°", "Equatorial Doldrums", "Polar Easterlies belt"],
-      ans: 1,
-      exp: "Due to less landmass in the Southern Hemisphere between 40°S and 50°S, westerly winds blow with great strength, known as the Roaring Forties."
-    },
-    {
-      subject: "Economy",
-      q: "If the RBI decides to adopt an expansionist monetary policy, which of the following would it NOT do?",
-      options: ["Cut and optimize the Statutory Liquidity Ratio", "Increase the Marginal Standing Facility Rate", "Cut the Bank Rate and Repo Rate", "Buy government securities in Open Market Operations"],
-      ans: 1,
-      exp: "Increasing the MSF rate makes borrowing costlier and reduces liquidity (contractionary), whereas expansionist policy aims to increase money supply."
-    },
-    {
-      subject: "Economy",
-      q: "Which of the following is included in the Capital Budget of the Government of India?",
-      options: ["Expenditure on acquisition of assets like roads and buildings", "Loans received from foreign governments", "Loans and advances granted to the States", "All of the above"],
-      ans: 3,
-      exp: "Capital Budget includes both Capital Receipts (foreign loans, disinvestment) and Capital Expenditure (asset creation, loans to states)."
-    },
-    {
-      subject: "Polity",
-      q: "A Money Bill passed by the Lok Sabha can be delayed by the Rajya Sabha for a maximum period of:",
-      options: ["14 days", "30 days", "60 days", "6 months"],
-      ans: 0,
-      exp: "Under Article 109, the Rajya Sabha must return a Money Bill within 14 days, failing which it is deemed to have been passed by both Houses."
-    },
-    {
-      subject: "Geography",
-      q: "Siachen Glacier is situated to the:",
-      options: ["East of Aksai Chin", "East of Leh", "North of Gilgit", "North of Nubra Valley"],
-      ans: 3,
-      exp: "Siachen Glacier lies in the eastern Karakoram range, immediately north of the Nubra Valley."
-    }
-  ];
-
-  let student = { name: "", phone: "", batch: "" };
+  let ALL_QUESTIONS = [];
+  let ACTIVE_QUESTIONS = [];
+  let student = { name: "", phone: "", batch: "", modeLabel: "" };
   let currentIdx = 0;
-  let answers = new Array(QUESTIONS.length).fill(null);
-  let markedReview = new Array(QUESTIONS.length).fill(false);
-  let timeLeft = EXAM_DURATION_SEC;
+  let answers = [];
+  let markedReview = [];
+  let eliminated = []; // Array of Sets for option elimination
+  let examDurationSec = 12 * 60;
+  let timeLeft = 12 * 60;
   let timerInterval = null;
   let finalReport = {};
+
+  // Load questions.json on startup
+  fetch("./questions.json")
+    .then(res => {
+      if (!res.ok) throw new Error("Failed to load questions.json");
+      return res.json();
+    })
+    .then(data => {
+      ALL_QUESTIONS = data;
+      const subjects = [...new Set(ALL_QUESTIONS.map(q => q.subject))];
+      document.getElementById("bankInfo").textContent = `Question Bank: ${ALL_QUESTIONS.length} Static Qs across ${subjects.length} UPSC Subjects`;
+
+      const subSelect = document.getElementById("subjectSelect");
+      subSelect.innerHTML = subjects.map(s => {
+        const count = ALL_QUESTIONS.filter(q => q.subject === s).length;
+        return `<option value="${s}">${s} (${count} Qs)</option>`;
+      }).join("");
+
+      const startBtn = document.getElementById("startBtn");
+      startBtn.disabled = false;
+      startBtn.textContent = "Start Mock Test →";
+      onModeChange();
+    })
+    .catch(() => {
+      document.getElementById("bankInfo").textContent = "Error: questions.json not found in repo.";
+    });
+
+  function shuffle(arr) {
+    const copy = [...arr];
+    for (let i = copy.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+  }
+
+  function onModeChange() {
+    const mode = document.getElementById("testMode").value;
+    const subGroup = document.getElementById("subjectGroup");
+    let qCount = 10, mins = 12;
+
+    if (mode === "sectional") {
+      subGroup.classList.remove("hidden");
+      const sub = document.getElementById("subjectSelect").value;
+      const avail = ALL_QUESTIONS.filter(q => q.subject === sub).length;
+      qCount = Math.min(20, avail);
+      mins = Math.max(5, Math.ceil(qCount * 1.2));
+    } else {
+      subGroup.classList.add("hidden");
+      if (mode === "full") {
+        qCount = Math.min(100, ALL_QUESTIONS.length);
+        mins = qCount >= 100 ? 120 : Math.ceil(qCount * 1.2);
+      } else {
+        qCount = Math.min(10, ALL_QUESTIONS.length);
+        mins = Math.ceil(qCount * 1.2);
+      }
+    }
+    document.getElementById("metaQs").textContent = `${qCount} Qs`;
+    document.getElementById("metaTime").textContent = `${mins} Min`;
+  }
 
   function startExam() {
     const name = document.getElementById("studentName").value.trim();
@@ -336,8 +351,31 @@
       return;
     }
 
+    const mode = document.getElementById("testMode").value;
+    let pool = [];
+    let modeLabel = "Quick Demo";
+
+    if (mode === "sectional") {
+      const sub = document.getElementById("subjectSelect").value;
+      pool = shuffle(ALL_QUESTIONS.filter(q => q.subject === sub)).slice(0, 20);
+      modeLabel = `Sectional: ${sub}`;
+    } else if (mode === "full") {
+      pool = shuffle(ALL_QUESTIONS).slice(0, 100);
+      modeLabel = "Full-Length Mock";
+    } else {
+      pool = shuffle(ALL_QUESTIONS).slice(0, 10);
+    }
+
+    ACTIVE_QUESTIONS = pool;
+    examDurationSec = (mode === "full" && pool.length >= 100) ? 120 * 60 : Math.max(5, Math.ceil(pool.length * 1.2)) * 60;
+    timeLeft = examDurationSec;
+    answers = new Array(ACTIVE_QUESTIONS.length).fill(null);
+    markedReview = new Array(ACTIVE_QUESTIONS.length).fill(false);
+    eliminated = ACTIVE_QUESTIONS.map(() => new Set());
+    currentIdx = 0;
+
     err.classList.add("hidden");
-    student = { name, phone, batch };
+    student = { name, phone, batch, modeLabel };
     document.getElementById("loginScreen").classList.add("hidden");
     document.getElementById("examScreen").classList.remove("hidden");
     renderQuestion();
@@ -367,7 +405,7 @@
   function renderPalette() {
     const pal = document.getElementById("palette");
     pal.innerHTML = "";
-    QUESTIONS.forEach((_, i) => {
+    ACTIVE_QUESTIONS.forEach((_, i) => {
       const btn = document.createElement("button");
       btn.className = "q-dot";
       if (i === currentIdx) btn.classList.add("active");
@@ -380,8 +418,8 @@
   }
 
   function renderQuestion() {
-    const q = QUESTIONS[currentIdx];
-    document.getElementById("qCounter").textContent = `Question ${currentIdx + 1} of ${QUESTIONS.length}`;
+    const q = ACTIVE_QUESTIONS[currentIdx];
+    document.getElementById("qCounter").textContent = `Question ${currentIdx + 1} of ${ACTIVE_QUESTIONS.length}`;
     document.getElementById("qSubject").textContent = q.subject;
     document.getElementById("qText").textContent = q.q;
 
@@ -389,14 +427,35 @@
     optBox.innerHTML = "";
     const labels = ["A", "B", "C", "D"];
     q.options.forEach((opt, idx) => {
+      const isElim = eliminated[currentIdx].has(idx);
+      const row = document.createElement("div");
+      row.className = "option-row";
+
       const div = document.createElement("div");
-      div.className = "option" + (answers[currentIdx] === idx ? " selected" : "");
+      div.className = "option" + (answers[currentIdx] === idx ? " selected" : "") + (isElim ? " eliminated" : "");
       div.innerHTML = `<span class="opt-label">${labels[idx]}.</span><span>${opt}</span>`;
       div.onclick = () => {
+        if (eliminated[currentIdx].has(idx)) eliminated[currentIdx].delete(idx);
         answers[currentIdx] = idx;
         renderQuestion();
       };
-      optBox.appendChild(div);
+
+      const elimBtn = document.createElement("button");
+      elimBtn.className = "elim-btn" + (isElim ? " active" : "");
+      elimBtn.title = "Eliminate option";
+      elimBtn.textContent = "✕";
+      elimBtn.onclick = () => {
+        if (eliminated[currentIdx].has(idx)) eliminated[currentIdx].delete(idx);
+        else {
+          eliminated[currentIdx].add(idx);
+          if (answers[currentIdx] === idx) answers[currentIdx] = null;
+        }
+        renderQuestion();
+      };
+
+      row.appendChild(div);
+      row.appendChild(elimBtn);
+      optBox.appendChild(row);
     });
     renderPalette();
   }
@@ -404,11 +463,11 @@
   function clearResponse() { answers[currentIdx] = null; renderQuestion(); }
   function toggleReview() { markedReview[currentIdx] = !markedReview[currentIdx]; renderPalette(); }
   function prevQ() { if (currentIdx > 0) { currentIdx--; renderQuestion(); } }
-  function nextQ() { if (currentIdx < QUESTIONS.length - 1) { currentIdx++; renderQuestion(); } else confirmSubmit(); }
+  function nextQ() { if (currentIdx < ACTIVE_QUESTIONS.length - 1) { currentIdx++; renderQuestion(); } else confirmSubmit(); }
 
   function confirmSubmit() {
     const attempted = answers.filter(a => a !== null).length;
-    if (confirm(`You have attempted ${attempted}/${QUESTIONS.length} questions. Submit test now?`)) {
+    if (confirm(`You have attempted ${attempted}/${ACTIVE_QUESTIONS.length} questions. Submit test now?`)) {
       submitExam();
     }
   }
@@ -418,7 +477,7 @@
     let correct = 0, wrong = 0, unattempted = 0;
     const subStats = {};
 
-    QUESTIONS.forEach((q, i) => {
+    ACTIVE_QUESTIONS.forEach((q, i) => {
       if (!subStats[q.subject]) subStats[q.subject] = { total: 0, correct: 0 };
       subStats[q.subject].total++;
       if (answers[i] === null) unattempted++;
@@ -429,7 +488,7 @@
     const score = (correct * 2 - wrong * (2 / 3)).toFixed(2);
     const attempted = correct + wrong;
     const accuracy = attempted ? Math.round((correct / attempted) * 100) : 0;
-    const timeTakenSec = EXAM_DURATION_SEC - timeLeft;
+    const timeTakenSec = examDurationSec - timeLeft;
     const timeTakenStr = `${Math.floor(timeTakenSec / 60)}m ${timeTakenSec % 60}s`;
 
     finalReport = { ...student, score, accuracy, correct, wrong, unattempted, timeTaken: timeTakenStr };
@@ -437,7 +496,7 @@
     document.getElementById("examScreen").classList.add("hidden");
     document.getElementById("resultScreen").classList.remove("hidden");
 
-    document.getElementById("studentMeta").textContent = `${student.name} (${student.phone}) • Batch: ${student.batch} • Time: ${timeTakenStr}`;
+    document.getElementById("studentMeta").textContent = `${student.name} • ${student.modeLabel} • Time: ${timeTakenStr}`;
     document.getElementById("resScore").textContent = score;
     document.getElementById("resAcc").textContent = `${accuracy}%`;
     document.getElementById("resCorrect").textContent = correct;
@@ -450,15 +509,30 @@
       subBox.innerHTML += `<div class="sub-row"><span>${sub}</span><strong>${s.correct} / ${s.total} Correct</strong></div>`;
     });
 
+    renderSolutions("all");
+    syncToGoogleSheet(finalReport);
+  }
+
+  function renderSolutions(filter) {
+    ["all", "wrong", "skipped"].forEach(f => {
+      document.getElementById(`f-${f}`).classList.toggle("active-filter", f === filter);
+    });
+
     const solBox = document.getElementById("solutionsContainer");
     solBox.innerHTML = "";
     const labels = ["A", "B", "C", "D"];
-    QUESTIONS.forEach((q, i) => {
+    let shown = 0;
+
+    ACTIVE_QUESTIONS.forEach((q, i) => {
       const uAns = answers[i];
-      const status = uAns === null ? "unattempted" : (uAns === q.ans ? "correct" : "wrong");
+      const status = uAns === null ? "skipped" : (uAns === q.ans ? "correct" : "wrong");
+      if (filter === "wrong" && status !== "wrong") return;
+      if (filter === "skipped" && status !== "skipped") return;
+
+      shown++;
       solBox.innerHTML += `
         <div class="review-item ${status}">
-          <div style="font-weight:600; margin-bottom:6px;">Q${i + 1}. ${q.q}</div>
+          <div style="font-weight:600; margin-bottom:6px;">Q${i + 1}. [${q.subject}] ${q.q}</div>
           <div style="font-size:0.85rem;">
             Your Answer: <strong>${uAns === null ? "Skipped" : labels[uAns] + ". " + q.options[uAns]}</strong> |
             Correct: <strong style="color:var(--green)">${labels[q.ans]}. ${q.options[q.ans]}</strong>
@@ -467,13 +541,15 @@
         </div>`;
     });
 
-    syncToGoogleSheet(finalReport);
+    if (shown === 0) {
+      solBox.innerHTML = `<p style="color:var(--muted); font-size:0.9rem;">No questions in this filter.</p>`;
+    }
   }
 
   function syncToGoogleSheet(data) {
     const statusEl = document.getElementById("syncStatus");
     if (!GOOGLE_SHEET_URL) {
-      statusEl.textContent = "Demo Mode (Google Sheet sync not connected yet)";
+      statusEl.textContent = "Local Mode (Google Sheet sync ready whenever you connect it)";
       return;
     }
     statusEl.textContent = "Saving result to Academy Leaderboard...";
@@ -488,7 +564,7 @@
   }
 
   function shareWhatsApp() {
-    const msg = `*Rahul IAS Academy — Prelims Mock Scorecard*\nStudent: ${finalReport.name}\nScore: *${finalReport.score} / ${QUESTIONS.length * 2}*\nAccuracy: ${finalReport.accuracy}% (Correct: ${finalReport.correct}, Wrong: ${finalReport.wrong})\nTime Taken: ${finalReport.timeTaken}`;
+    const msg = `*Rahul IAS Academy — ${finalReport.modeLabel}*\nStudent: ${finalReport.name}\nScore: *${finalReport.score} / ${ACTIVE_QUESTIONS.length * 2}*\nAccuracy: ${finalReport.accuracy}% (Correct: ${finalReport.correct}, Wrong: ${finalReport.wrong})\nTime Taken: ${finalReport.timeTaken}`;
     window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, "_blank");
   }
 </script>
