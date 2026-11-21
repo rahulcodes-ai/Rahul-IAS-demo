@@ -1,0 +1,100 @@
+[
+  {
+    "subject": "Modern History",
+    "q": "In the context of Colonial India, Shah Nawaz Khan, Prem Kumar Sehgal and Gurbaksh Singh Dhillon are remembered as:",
+    "options": ["Leaders of Swadeshi Movement", "Members of the Interim Government in 1946", "Officers of the Indian National Army", "Members of the Drafting Committee"],
+    "ans": 2,
+    "exp": "They were the three INA officers famously tried together in the Red Fort Trials (1945–46)."
+  },
+  {
+    "subject": "Modern History",
+    "q": "Who among the following was associated as Secretary with Hindu Female School which later came to be known as Bethune Female School?",
+    "options": ["Annie Besant", "Debendranath Tagore", "Ishwar Chandra Vidyasagar", "Sarojini Naidu"],
+    "ans": 2,
+    "exp": "Ishwar Chandra Vidyasagar served as the Secretary of the Bethune School, established in 1849 in Calcutta."
+  },
+  {
+    "subject": "Modern History",
+    "q": "The 'Ilbert Bill Controversy' (1883) was related to:",
+    "options": ["Imposition of restrictions on vernacular newspapers", "Removal of disqualifications imposed on Indian magistrates to try European subjects", "Reduction of the upper age limit for the Indian Civil Service", "Abolition of salt tax in Bengal"],
+    "ans": 1,
+    "exp": "Introduced during Lord Ripon's tenure, the Ilbert Bill sought to allow senior Indian judges to try European British subjects, sparking fierce racial opposition."
+  },
+  {
+    "subject": "Modern History",
+    "q": "The 'Permanent Settlement' of 1793 in Bengal was introduced by:",
+    "options": ["Warren Hastings", "Lord Cornwallis", "Lord Wellesley", "Lord Dalhousie"],
+    "ans": 1,
+    "exp": "Lord Cornwallis introduced the Permanent Settlement (Zamindari System) in Bengal, Bihar, and Orissa in 1793."
+  },
+  {
+    "subject": "Modern History",
+    "q": "The 'Poona Pact' (1932) was signed between Mahatma Gandhi and:",
+    "options": ["Muhammad Ali Jinnah", "Dr. B. R. Ambedkar", "Lord Irwin", "Subhas Chandra Bose"],
+    "ans": 1,
+    "exp": "Signed at Yerwada Central Jail, the Poona Pact abandoned separate electorates for Depressed Classes in favour of increased reserved seats in joint electorates."
+  },
+  {
+    "subject": "Modern History",
+    "q": "Who founded the 'Satyashodhak Samaj' in 1873 in Maharashtra?",
+    "options": ["Gopal Krishna Gokhale", "Jyotirao Phule", "Mahadev Govind Ranade", "Bal Gangadhar Tilak"],
+    "ans": 1,
+    "exp": "Jyotirao Phule founded the Satyashodhak Samaj (Truth-Seekers' Society) to fight caste oppression and promote education among lower castes and women."
+  },
+  {
+    "subject": "Modern History",
+    "q": "The 'Surat Split' of the Indian National Congress into Moderates and Extremists took place in:",
+    "options": ["1905", "1906", "1907", "1911"],
+    "ans": 2,
+    "exp": "The Congress split at its 1907 Surat Session presided over by Rash Behari Ghosh over differences on Swadeshi, Boycott, and the presidency."
+  },
+  {
+    "subject": "Modern History",
+    "q": "Which Act introduced 'Dyarchy' in the provinces of British India?",
+    "options": ["Indian Councils Act, 1909", "Government of India Act, 1919", "Government of India Act, 1935", "Indian Independence Act, 1947"],
+    "ans": 1,
+    "exp": "The Government of India Act, 1919 (Montagu-Chelmsford Reforms) divided provincial subjects into 'Transferred' and 'Reserved' lists (Dyarchy)."
+  },
+  {
+    "subject": "Modern History",
+    "q": "The 'Wood's Despatch' of 1854 is often described as the 'Magna Carta of English Education in India'. It recommended:",
+    "options": ["Abolition of vernacular primary schools", "Establishment of universities in Calcutta, Bombay, and Madras", "Closure of all Christian missionary schools", "Compulsory military training in colleges"],
+    "ans": 1,
+    "exp": "Charles Wood's Despatch recommended a graded education system, grants-in-aid, female education, and universities in Calcutta, Bombay, and Madras (set up in 1857)."
+  },
+  {
+    "subject": "Modern History",
+    "q": "During the Indian Freedom Struggle, the 'Dandi March' (1930) marked the beginning of:",
+    "options": ["Non-Cooperation Movement", "Civil Disobedience Movement", "Quit India Movement", "Swadeshi Movement"],
+    "ans": 1,
+    "exp": "Mahatma Gandhi broke the salt law at Dandi on April 6, 1930, formally launching the Civil Disobedience Movement."
+  },
+  {
+    "subject": "Modern History",
+    "q": "Who among the following was the first Indian to qualify for the Indian Civil Service (ICS)?",
+    "options": ["Surendranath Banerjee", "Satyendranath Tagore", "Subhas Chandra Bose", "Dadabhai Naoroji"],
+    "ans": 1,
+    "exp": "Satyendranath Tagore (elder brother of Rabindranath Tagore) became the first Indian to join the ICS in 1863."
+  },
+  {
+    "subject": "Modern History",
+    "q": "The 'Subsidiary Alliance' system was effectively used to expand British supremacy in India by:",
+    "options": ["Lord Clive", "Lord Wellesley", "Lord William Bentinck", "Lord Canning"],
+    "ans": 1,
+    "exp": "Lord Wellesley (1798–1805) perfected the Subsidiary Alliance, under which Indian rulers accepted a British resident and paid for British troops stationed in their territory."
+  },
+  {
+    "subject": "Modern History",
+    "q": "The 'Cabinet Mission Plan' of 1946 proposed:",
+    "options": ["Immediate partition of India into two sovereign dominions", "A Union of India with a weak Centre and grouping of provinces, plus a Constituent Assembly", "Complete withdrawal of British troops by December 1946", "Direct rule of the British Crown for 10 more years"],
+    "ans": 1,
+    "exp": "The Cabinet Mission rejected Pakistan, proposed a 3-tier federal structure with provincial groupings, and set up the Constituent Assembly."
+  },
+  {
+    "subject": "Modern History",
+    "q": "Who wrote the famous book 'Poverty and Un-British Rule in India', propounding the Drain of Wealth theory?",
+    "options": ["R. C. Dutt", "Dadabhai Naoroji", "M. G. Ranade", "G. Subramania Iyer"],
+    "ans": 1,
+    "exp": "Dadabhai Naoroji ('Grand Old Man of India') published Poverty and Un-British Rule in India (1901), systematically exposing the economic drain to Britain."
+  }
+]
