@@ -1,0 +1,72 @@
+[
+  {
+    "subject": "Science & Tech",
+    "q": "With reference to communication technologies, what is the difference between LTE and VoLTE?",
+    "options": ["LTE is commonly marketed as 3G and VoLTE as 4G", "LTE is data-only technology and VoLTE is voice-only technology", "Both 1 and 2", "Neither 1 nor 2"],
+    "ans": 3,
+    "exp": "LTE is 4G broadband (packet-switched), while VoLTE allows high-definition voice calls directly over the 4G LTE data network."
+  },
+  {
+    "subject": "Science & Tech",
+    "q": "Which of the following is used as a moderator in nuclear reactors?",
+    "options": ["Heavy water (D2O)", "Liquid sodium", "Cadmium rods", "Boron steel"],
+    "ans": 0,
+    "exp": "Heavy water (D2O) and graphite slow down fast neutrons (moderators); Cadmium and Boron absorb neutrons (control rods)."
+  },
+  {
+    "subject": "Science & Tech",
+    "q": "In the context of biotechnology, 'CRISPR-Cas9' is best described as:",
+    "options": ["A vaccine delivery nanoparticle", "A precise gene-editing tool", "A biodegradable plastic polymer", "A satellite imaging sensor"],
+    "ans": 1,
+    "exp": "CRISPR-Cas9 acts as 'molecular scissors' allowing scientists to locate, cut, and modify specific DNA sequences accurately."
+  },
+  {
+    "subject": "Science & Tech",
+    "q": "A Geostationary Satellite orbits the Earth at an approximate altitude of:",
+    "options": ["400 km", "2,000 km", "35,786 km", "1,50,000 km"],
+    "ans": 2,
+    "exp": "At ~35,786 km above the Equator, a satellite's orbital period matches Earth's 24-hour rotation, making it appear stationary over one spot."
+  },
+  {
+    "subject": "Science & Tech",
+    "q": "Which of the following diseases is caused by a Virus?",
+    "options": ["Tuberculosis", "Malaria", "Dengue", "Cholera"],
+    "ans": 2,
+    "exp": "Dengue is caused by the Dengue virus (transmitted by Aedes aegypti mosquito). TB and Cholera are bacterial; Malaria is protozoan."
+  },
+  {
+    "subject": "Science & Tech",
+    "q": "In optical fibres, light signals travel long distances with minimal loss due to the phenomenon of:",
+    "options": ["Refraction", "Dispersion", "Total Internal Reflection", "Diffraction"],
+    "ans": 2,
+    "exp": "Optical fibres trap light inside a high-refractive-index core using repeated Total Internal Reflection (TIR)."
+  },
+  {
+    "subject": "Science & Tech",
+    "q": "What is the primary function of 'Mitochondria' in a eukaryotic cell?",
+    "options": ["Protein synthesis", "Cellular respiration and ATP (energy) production", "Photosynthesis", "Storage of genetic code exclusively"],
+    "ans": 1,
+    "exp": "Known as the powerhouse of the cell, mitochondria generate most of the cell's chemical energy in the form of ATP."
+  },
+  {
+    "subject": "Science & Tech",
+    "q": "In India's space programme, what does the 'Cryogenic Engine' in LVM3 / GSLV use as propellants?",
+    "options": ["Solid hydroxyl-terminated polybutadiene", "Liquid Hydrogen (fuel) and Liquid Oxygen (oxidizer)", "Kerosene and Nitric Acid", "Compressed Methane and Nitrogen"],
+    "ans": 1,
+    "exp": "Cryogenic stages burn Liquid Hydrogen (at −253°C) and Liquid Oxygen (at −183°C) to deliver very high thrust per kg of propellant."
+  },
+  {
+    "subject": "Science & Tech",
+    "q": "Which vitamin is essential for blood clotting in the human body?",
+    "options": ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin K"],
+    "ans": 3,
+    "exp": "Vitamin K is required by the liver to synthesize prothrombin and other proteins essential for blood coagulation."
+  },
+  {
+    "subject": "Science & Tech",
+    "q": "In computing, 'Blockchain' technology is primarily characterized by:",
+    "options": ["A single centralized server controlled by one bank", "A distributed, immutable digital ledger secured by cryptography", "Wireless short-range Bluetooth networking", "Quantum-only hardware processors"],
+    "ans": 1,
+    "exp": "A blockchain is a decentralized, cryptographically linked ledger where recorded transactions cannot be retroactively altered without network consensus."
+  }
+]
