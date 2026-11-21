@@ -1,0 +1,93 @@
+[
+  {
+    "subject": "Ancient & Culture",
+    "q": "With reference to the history of ancient India, Bhavabhuti, Hastimalla and Kshemeshvara were famous:",
+    "options": ["Jain monks", "Playwrights", "Temple architects", "Philosophers"],
+    "ans": 1,
+    "exp": "Bhavabhuti (Malatimadhava), Hastimalla, and Kshemeshvara were renowned Sanskrit/Prakrit playwrights."
+  },
+  {
+    "subject": "Ancient & Culture",
+    "q": "Which of the following Harappan sites is famous for its dockyard?",
+    "options": ["Kalibangan", "Lothal", "Dholavira", "Banawali"],
+    "ans": 1,
+    "exp": "Lothal in Gujarat was a major port town of the Indus Valley Civilization known for its brick-built tidal dockyard."
+  },
+  {
+    "subject": "Ancient & Culture",
+    "q": "The famous 'Great Bath' was discovered at which Indus Valley site?",
+    "options": ["Harappa", "Mohenjo-daro", "Rakhigarhi", "Chanhudaro"],
+    "ans": 1,
+    "exp": "The Great Bath, a watertight baked-brick tank likely used for ritual bathing, was excavated at Mohenjo-daro."
+  },
+  {
+    "subject": "Ancient & Culture",
+    "q": "In which rock edict did Ashoka mention the Kalinga War and his remorse over the bloodshed?",
+    "options": ["Major Rock Edict I", "Major Rock Edict VII", "Major Rock Edict XIII", "Pillar Edict VII"],
+    "ans": 2,
+    "exp": "Major Rock Edict XIII records Ashoka's victory over Kalinga, his deep remorse, and his turn towards Dhamma-vijaya."
+  },
+  {
+    "subject": "Ancient & Culture",
+    "q": "The 'Ajanta Caves' in Maharashtra are primarily associated with which religion?",
+    "options": ["Jainism", "Buddhism", "Hinduism", "Ajivika sect"],
+    "ans": 1,
+    "exp": "All 29–30 rock-cut caves at Ajanta are exclusively Buddhist (Hinayana and Mahayana phases), famous for Jataka mural paintings."
+  },
+  {
+    "subject": "Ancient & Culture",
+    "q": "Who authored the Sanskrit play 'Mudrarakshasa', which narrates the ascent of Chandragupta Maurya?",
+    "options": ["Kalidasa", "Vishakhadatta", "Bhasa", "Shudraka"],
+    "ans": 1,
+    "exp": "Vishakhadatta wrote Mudrarakshasa during the Gupta period, depicting Chanakya's political strategies for Chandragupta Maurya."
+  },
+  {
+    "subject": "Ancient & Culture",
+    "q": "In medieval Indian history, the 'Iqtadari System' was institutionalized by:",
+    "options": ["Qutb-ud-din Aibak", "Iltutmish", "Alauddin Khalji", "Balban"],
+    "ans": 1,
+    "exp": "Shams-ud-din Iltutmish organized the Iqta system, assigning land revenue rights to nobles (Iqtadars) in lieu of cash salaries."
+  },
+  {
+    "subject": "Ancient & Culture",
+    "q": "The 'Brihadisvara Temple' at Thanjavur was built by which Chola ruler?",
+    "options": ["Vijayalaya Chola", "Rajaraja I", "Rajendra I", "Kulottunga I"],
+    "ans": 1,
+    "exp": "Built by Rajaraja Chola I around 1010 CE, the Brihadisvara Temple is a pinnacle of Dravida temple architecture and a UNESCO World Heritage Site."
+  },
+  {
+    "subject": "Ancient & Culture",
+    "q": "Which Bhakti saint was a disciple of Ramananda and composed verses included in the Guru Granth Sahib?",
+    "options": ["Chaitanya Mahaprabhu", "Kabir", "Vallabhacharya", "Basavanna"],
+    "ans": 1,
+    "exp": "Kabir, a nirguna Bhakti saint and disciple of Ramananda, rejected ritualism and caste; over 500 of his verses appear in the Guru Granth Sahib."
+  },
+  {
+    "subject": "Ancient & Culture",
+    "q": "The 'Sattriya' classical dance form originated in which Indian state?",
+    "options": ["Manipur", "Odisha", "Assam", "Kerala"],
+    "ans": 2,
+    "exp": "Sattriya was introduced in the 15th century by Vaishnava saint Srimanta Sankardev in the monasteries (Sattras) of Assam."
+  },
+  {
+    "subject": "Ancient & Culture",
+    "q": "The 'Mansabdari System' introduced by Akbar was primarily a system of:",
+    "options": ["Land revenue assessment", "Grading military and civil nobility by rank (Zat and Sawar)", "Judicial administration in provinces", "Regulation of maritime trade"],
+    "ans": 1,
+    "exp": "Under the Mansabdari system, every officer held a Mansab (rank) comprising Zat (personal status/salary) and Sawar (cavalry quota to maintain)."
+  },
+  {
+    "subject": "Ancient & Culture",
+    "q": "Which of the following Buddhist Councils was held at Kundalavana in Kashmir under the patronage of Kanishka?",
+    "options": ["First Buddhist Council", "Second Buddhist Council", "Third Buddhist Council", "Fourth Buddhist Council"],
+    "ans": 3,
+    "exp": "The Fourth Buddhist Council (1st century CE) was presided over by Vasumitra under Kushana emperor Kanishka, marking the formal Mahayana-Hinayana division."
+  },
+  {
+    "subject": "Ancient & Culture",
+    "q": "The 'Gandhara School of Art' flourished under the Kushanas and was heavily influenced by:",
+    "options": ["Egyptian art", "Greco-Roman art", "Chinese art", "Dravidian art"],
+    "ans": 1,
+    "exp": "Gandhara art blended Buddhist themes with Greco-Roman realism (wavy hair, muscular drapery, grey-bluish schist stone)."
+  }
+]
