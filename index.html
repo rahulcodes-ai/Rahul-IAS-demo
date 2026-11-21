@@ -54,6 +54,7 @@
     .btn-amber { background: var(--amber); color: #1a1200; }
     .btn-green { background: var(--green); color: #022c22; }
     .btn-red { background: var(--red); color: #fff; }
+    .btn-sm { padding: 6px 10px; font-size: 0.78rem; }
 
     /* Login Screen */
     .login-box { max-width: 480px; margin: 28px auto; }
@@ -93,9 +94,7 @@
       padding: 4px 10px; border-radius: 6px; font-size: 0.78rem; font-weight: 700;
     }
     .q-text { font-size: 1.05rem; font-weight: 600; margin-bottom: 18px; }
-    .option-row {
-      display: flex; align-items: center; gap: 8px; margin-bottom: 10px;
-    }
+    .option-row { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
     .option {
       flex: 1; display: flex; gap: 10px; align-items: flex-start;
       background: var(--bg); border: 1px solid var(--border);
@@ -114,15 +113,42 @@
 
     .actions { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; margin-top: 16px; }
 
-    /* Result Screen */
+    /* Result Screen & Visual Chart */
     .score-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin: 16px 0; }
     .stat-box { background: var(--bg); border: 1px solid var(--border); padding: 14px; border-radius: 10px; text-align: center; }
     .stat-box h3 { font-size: 1.4rem; margin-bottom: 2px; }
     .stat-box p { font-size: 0.8rem; color: var(--muted); }
-    .sub-row {
-      display: flex; justify-content: space-between; padding: 10px 12px;
-      background: var(--bg); border-radius: 8px; margin-bottom: 8px; font-size: 0.9rem;
+
+    .verdict-box {
+      background: rgba(0, 229, 255, 0.08); border: 1px solid rgba(0, 229, 255, 0.25);
+      padding: 12px 14px; border-radius: 10px; margin: 14px 0; font-size: 0.9rem;
     }
+    .sub-chart-item {
+      background: var(--bg); border: 1px solid var(--border);
+      padding: 12px 14px; border-radius: 10px; margin-bottom: 10px;
+    }
+    .sub-chart-top {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.9rem; margin-bottom: 8px;
+    }
+    .status-pill {
+      font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; margin-left: 8px;
+    }
+    .pill-strong { background: rgba(16, 185, 129, 0.18); color: var(--green); }
+    .pill-avg { background: rgba(245, 158, 11, 0.18); color: var(--amber); }
+    .pill-weak { background: rgba(244, 63, 94, 0.18); color: var(--red); }
+
+    .bar-track { width: 100%; height: 8px; background: #1e293b; border-radius: 6px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 6px; transition: width 0.5s ease; }
+
+    /* Local History Table */
+    .history-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 12px; background: var(--bg); border: 1px solid var(--border);
+      border-radius: 8px; margin-bottom: 8px; font-size: 0.85rem; gap: 10px;
+    }
+    .history-meta { color: var(--muted); font-size: 0.76rem; }
+
     .filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
     .review-item { border-left: 4px solid var(--border); padding-left: 14px; margin-bottom: 18px; }
     .review-item.correct { border-color: var(--green); }
@@ -154,7 +180,7 @@
         <label>Select Test Mode</label>
         <select id="testMode" onchange="onModeChange()">
           <option value="demo">Quick Demo Mock (10 Qs • 12 Min)</option>
-          <option value="full">Full-Length UPSC Static Mock (Up to 100 Qs • 120 Min)</option>
+          <option value="full">Full-Length UPSC Static Mock (100 Qs • 120 Min)</option>
           <option value="sectional">Subject-Wise Sectional Test</option>
         </select>
       </div>
@@ -179,6 +205,16 @@
 
       <button id="startBtn" class="btn" style="width:100%;" onclick="startExam()" disabled>Loading Bank...</button>
     </div>
+
+    <!-- RECENT LOCAL HISTORY ON LOGIN SCREEN -->
+    <div id="loginHistoryCard" class="card hidden">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+        <h4 style="font-size:0.95rem;">Your Recent Attempts (This Device)</h4>
+        <button class="btn btn-outline btn-sm" onclick="clearHistory()">Clear</button>
+      </div>
+      <div id="loginHistoryList"></div>
+    </div>
+
     <p class="footer-note">Powered by Rahul IAS Academy • Official Student Portal</p>
   </div>
 
@@ -236,13 +272,24 @@
         <div class="stat-box"><h3 id="resWrong" style="color:var(--red)">0</h3><p>Wrong</p></div>
       </div>
 
-      <h4 style="margin:14px 0 8px; font-size:0.95rem;">Subject-wise Performance</h4>
+      <div id="smartVerdict" class="verdict-box"></div>
+
+      <h4 style="margin:14px 0 10px; font-size:0.95rem;">Strong & Weak Area Analysis</h4>
       <div id="subjectBreakdown"></div>
 
       <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:16px;">
         <button class="btn btn-green" onclick="shareWhatsApp()">Share Score on WhatsApp</button>
         <button class="btn btn-outline" onclick="location.reload()">Take Another Test</button>
       </div>
+    </div>
+
+    <!-- PERSONAL SCORE HISTORY CARD -->
+    <div class="card">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+        <h3 style="font-size:1.05rem;">Personal Score History (Top Local Attempts)</h3>
+        <button class="btn btn-outline btn-sm" onclick="clearHistory()">Clear History</button>
+      </div>
+      <div id="resultHistoryList"></div>
     </div>
 
     <div class="card">
@@ -261,6 +308,7 @@
 <script>
   const GOOGLE_SHEET_URL = ""; // Baad mein dedicated Gmail se yahan URL paste karna
   const VALID_BATCH_CODE = "RAHUL2026";
+  const HISTORY_KEY = "rahul_ias_score_history";
 
   let ALL_QUESTIONS = [];
   let ACTIVE_QUESTIONS = [];
@@ -268,7 +316,7 @@
   let currentIdx = 0;
   let answers = [];
   let markedReview = [];
-  let eliminated = []; // Array of Sets for option elimination
+  let eliminated = [];
   let examDurationSec = 12 * 60;
   let timeLeft = 12 * 60;
   let timerInterval = null;
@@ -308,6 +356,7 @@
       startBtn.disabled = false;
       startBtn.textContent = "Start Mock Test →";
       onModeChange();
+      renderHistoryUI();
     })
     .catch(err => {
       document.getElementById("bankInfo").textContent = `Error: ${err.message}`;
@@ -449,137 +498,3 @@
       div.innerHTML = `<span class="opt-label">${labels[idx]}.</span><span>${opt}</span>`;
       div.onclick = () => {
         if (eliminated[currentIdx].has(idx)) eliminated[currentIdx].delete(idx);
-        answers[currentIdx] = idx;
-        renderQuestion();
-      };
-
-      const elimBtn = document.createElement("button");
-      elimBtn.className = "elim-btn" + (isElim ? " active" : "");
-      elimBtn.title = "Eliminate option";
-      elimBtn.textContent = "✕";
-      elimBtn.onclick = () => {
-        if (eliminated[currentIdx].has(idx)) eliminated[currentIdx].delete(idx);
-        else {
-          eliminated[currentIdx].add(idx);
-          if (answers[currentIdx] === idx) answers[currentIdx] = null;
-        }
-        renderQuestion();
-      };
-
-      row.appendChild(div);
-      row.appendChild(elimBtn);
-      optBox.appendChild(row);
-    });
-    renderPalette();
-  }
-
-  function clearResponse() { answers[currentIdx] = null; renderQuestion(); }
-  function toggleReview() { markedReview[currentIdx] = !markedReview[currentIdx]; renderPalette(); }
-  function prevQ() { if (currentIdx > 0) { currentIdx--; renderQuestion(); } }
-  function nextQ() { if (currentIdx < ACTIVE_QUESTIONS.length - 1) { currentIdx++; renderQuestion(); } else confirmSubmit(); }
-
-  function confirmSubmit() {
-    const attempted = answers.filter(a => a !== null).length;
-    if (confirm(`You have attempted ${attempted}/${ACTIVE_QUESTIONS.length} questions. Submit test now?`)) {
-      submitExam();
-    }
-  }
-
-  function submitExam() {
-    clearInterval(timerInterval);
-    let correct = 0, wrong = 0, unattempted = 0;
-    const subStats = {};
-
-    ACTIVE_QUESTIONS.forEach((q, i) => {
-      if (!subStats[q.subject]) subStats[q.subject] = { total: 0, correct: 0 };
-      subStats[q.subject].total++;
-      if (answers[i] === null) unattempted++;
-      else if (answers[i] === q.ans) { correct++; subStats[q.subject].correct++; }
-      else wrong++;
-    });
-
-    const score = (correct * 2 - wrong * (2 / 3)).toFixed(2);
-    const attempted = correct + wrong;
-    const accuracy = attempted ? Math.round((correct / attempted) * 100) : 0;
-    const timeTakenSec = examDurationSec - timeLeft;
-    const timeTakenStr = `${Math.floor(timeTakenSec / 60)}m ${timeTakenSec % 60}s`;
-
-    finalReport = { ...student, score, accuracy, correct, wrong, unattempted, timeTaken: timeTakenStr };
-
-    document.getElementById("examScreen").classList.add("hidden");
-    document.getElementById("resultScreen").classList.remove("hidden");
-
-    document.getElementById("studentMeta").textContent = `${student.name} • ${student.modeLabel} • Time: ${timeTakenStr}`;
-    document.getElementById("resScore").textContent = score;
-    document.getElementById("resAcc").textContent = `${accuracy}%`;
-    document.getElementById("resCorrect").textContent = correct;
-    document.getElementById("resWrong").textContent = wrong;
-
-    const subBox = document.getElementById("subjectBreakdown");
-    subBox.innerHTML = "";
-    Object.keys(subStats).forEach(sub => {
-      const s = subStats[sub];
-      subBox.innerHTML += `<div class="sub-row"><span>${sub}</span><strong>${s.correct} / ${s.total} Correct</strong></div>`;
-    });
-
-    renderSolutions("all");
-    syncToGoogleSheet(finalReport);
-  }
-
-  function renderSolutions(filter) {
-    ["all", "wrong", "skipped"].forEach(f => {
-      document.getElementById(`f-${f}`).classList.toggle("active-filter", f === filter);
-    });
-
-    const solBox = document.getElementById("solutionsContainer");
-    solBox.innerHTML = "";
-    const labels = ["A", "B", "C", "D"];
-    let shown = 0;
-
-    ACTIVE_QUESTIONS.forEach((q, i) => {
-      const uAns = answers[i];
-      const status = uAns === null ? "skipped" : (uAns === q.ans ? "correct" : "wrong");
-      if (filter === "wrong" && status !== "wrong") return;
-      if (filter === "skipped" && status !== "skipped") return;
-
-      shown++;
-      solBox.innerHTML += `
-        <div class="review-item ${status}">
-          <div style="font-weight:600; margin-bottom:6px;">Q${i + 1}. [${q.subject}] ${q.q}</div>
-          <div style="font-size:0.85rem;">
-            Your Answer: <strong>${uAns === null ? "Skipped" : labels[uAns] + ". " + q.options[uAns]}</strong> |
-            Correct: <strong style="color:var(--green)">${labels[q.ans]}. ${q.options[q.ans]}</strong>
-          </div>
-          <div class="exp-box"><strong>Explanation:</strong> ${q.exp}</div>
-        </div>`;
-    });
-
-    if (shown === 0) {
-      solBox.innerHTML = `<p style="color:var(--muted); font-size:0.9rem;">No questions in this filter.</p>`;
-    }
-  }
-
-  function syncToGoogleSheet(data) {
-    const statusEl = document.getElementById("syncStatus");
-    if (!GOOGLE_SHEET_URL) {
-      statusEl.textContent = "Local Mode (Google Sheet sync ready whenever you connect it)";
-      return;
-    }
-    statusEl.textContent = "Saving result to Academy Leaderboard...";
-    fetch(GOOGLE_SHEET_URL, {
-      method: "POST",
-      mode: "no-cors",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
-    })
-    .then(() => { statusEl.textContent = "✓ Result synced to Rahul IAS Academy Sheet"; })
-    .catch(() => { statusEl.textContent = "Could not sync to sheet (offline)."; });
-  }
-
-  function shareWhatsApp() {
-    const msg = `*Rahul IAS Academy — ${finalReport.modeLabel}*\nStudent: ${finalReport.name}\nScore: *${finalReport.score} / ${ACTIVE_QUESTIONS.length * 2}*\nAccuracy: ${finalReport.accuracy}% (Correct: ${finalReport.correct}, Wrong: ${finalReport.wrong})\nTime Taken: ${finalReport.timeTaken}`;
-    window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, "_blank");
-  }
-</script>
-</body>
-</html>
